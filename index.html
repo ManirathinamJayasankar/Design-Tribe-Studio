@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design Tribe 2026</title>
+    <script>
+      (() => {
+        const navigationEntry = window.performance?.getEntriesByType?.("navigation")?.[0];
+
+        if ("scrollRestoration" in window.history) {
+          window.history.scrollRestoration = "manual";
+        }
+
+        if (navigationEntry?.type === "reload") {
+          window.scrollTo(0, 0);
+          window.addEventListener("pageshow", () => {
+            window.requestAnimationFrame(() => window.scrollTo(0, 0));
+          });
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="src/styles.css?v=responsive-21" />
+  </head>
+  <body>
+    <main>
+      <section class="hero section-dark" id="top">
+        <nav class="side-nav" aria-label="Primary">
+          <a class="brand" href="#top" aria-label="Design Tribe home">
+            <img src="/assets/hero/DT Logo White.svg" alt="Design Tribe" />
+          </a>
+          <a href="#system"><img class="nav-icon" src="/assets/hero/Plus Sign.svg" alt="" />System</a>
+          <a href="#work"><img class="nav-icon" src="/assets/hero/Plus Sign.svg" alt="" />Outcomes</a>
+          <a href="#about"><img class="nav-icon" src="/assets/hero/Plus Sign.svg" alt="" />About Us</a>
+        </nav>
+
+        <div class="hero-media" aria-hidden="true">
+          <video class="hero-video" autoplay muted loop playsinline preload="auto">
+            <source src="/assets/hero/DT Hero Placeholder Video.mov" />
+          </video>
+        </div>
+
+        <div class="container hero-inner">
+          <div class="eyebrow">GUIDED BY HUMANS + POWERED BY AI</div>
+          <h1>Design that thinks.<br />Work that endures.</h1>
+          <p>We help businesses build digital systems that operate,<br />communicate, and grow.</p>
+          <a class="button" href="#work">
+            Get Started
+            <img src="/assets/hero/Get Started.svg" alt="" />
+          </a>
+        </div>
+      </section>
+
+      <section class="reality-section" id="reality">
+        <div class="reality-wrap">
+          <div class="reality-intro">
+            <div class="reality-tagline">
+              <p>02. The Reality&nbsp;&nbsp;|&nbsp;&nbsp;Many touchpoints. One business. Too little connection.</p>
+            </div>
+
+            <div class="reality-heading">
+              <h2>Modern businesses<br />run on digital systems.</h2>
+              <p>
+                Products, presentations, marketing, communication, customer
+                experiences, and operations all shape how a business performs.
+              </p>
+            </div>
+          </div>
+
+          <div class="reality-body">
+            <div class="reality-grid">
+              <article class="reality-note">
+                <span class="note-dot" aria-hidden="true"></span>
+                <div>
+                  <h3>Most evolve independently.</h3>
+                  <p>Silos create gaps, repeat work, and slow momentum.</p>
+                </div>
+              </article>
+
+              <article class="reality-note">
+                <span class="note-dot" aria-hidden="true"></span>
+                <div>
+                  <h3>Few are designed to work together.</h3>
+                  <p>Connected systems create clarity, consistency, and compounding growth.</p>
+                </div>
+              </article>
+
+              <div class="reality-visual" aria-hidden="true">
+                <img class="visual-bg" src="/assets/section%202/Background.svg" alt="" />
+                <img class="visual-independent" src="/assets/section%202/Independently.svg" alt="" />
+              </div>
+
+              <div class="reality-visual" aria-hidden="true">
+                <img class="visual-bg" src="/assets/section%202/Background.svg" alt="" />
+                <img class="visual-together" src="/assets/section%202/Work%20together.svg" alt="" />
+              </div>
+            </div>
+
+            <a class="reality-strip" href="#system">
+              <span class="strip-left-icon">
+                <img src="/assets/section%202/Bottom%20Icon%201.svg" alt="" />
+              </span>
+              <span class="strip-copy">
+                <small>Good systems don’t just work.</small>
+                <strong>They work together.</strong>
+              </span>
+              <span class="strip-spacer" aria-hidden="true"></span>
+              <span class="strip-right-copy">That’s where everything starts to move forward.</span>
+              <img class="strip-arrow" src="/assets/section%202/Bottom%20icon%202.svg" alt="" />
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="system-section" id="system">
+        <div class="system-scale-frame">
+          <div class="system-wrap">
+            <div class="system-intro">
+              <div class="system-tagline">
+                <p>03. Design Tribe System&nbsp;&nbsp;|&nbsp;&nbsp;One practice. Many disciplines. Built to connect.</p>
+              </div>
+
+              <div class="system-heading">
+                <h2>From strategy to launch:<br />one connected system.</h2>
+                <p>
+                  We bring strategy, experience, communication,<br />
+                  technology, growth, and AI together to create systems<br />
+                  that work as one.
+                </p>
+              </div>
+            </div>
+
+            <div class="system-sequence" aria-label="Design Tribe connected system animation">
+              <div class="system-sequence-sticky">
+                <div class="dt-system-diagram">
+                  <img
+                    class="dt-structure-placeholder"
+                    src="/assets/section%203/Infographic%20full%20structure.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+
+                  <article class="dt-card dt-card-wide dt-strategy" data-sequence-index="0">
+                    <img
+                      class="dt-card-asset"
+                      src="/assets/section%203/Strategy%20full%20card.svg"
+                      alt="Strategy card"
+                    />
+                  </article>
+
+                  <article class="dt-card dt-card-wide dt-experience" data-sequence-index="1">
+                    <img
+                      class="dt-card-asset"
+                      src="/assets/section%203/Experience%20full%20card.svg"
+                      alt="Experience card"
+                    />
+                  </article>
+
+                  <article class="dt-card dt-card-small dt-communication" data-sequence-index="2">
+                    <img
+                      class="dt-card-asset"
+                      src="/assets/section%203/Communication%20full%20card.svg"
+                      alt="Communication card"
+                    />
+                  </article>
+
+                  <article class="dt-card dt-card-small dt-technology" data-sequence-index="3">
+                    <img
+                      class="dt-card-asset"
+                      src="/assets/section%203/Technology%20full%20card.svg"
+                      alt="Technology card"
+                    />
+                  </article>
+
+                  <article class="dt-card dt-card-wide dt-growth" data-sequence-index="4">
+                    <img
+                      class="dt-card-asset"
+                      src="/assets/section%203/Growth%20full%20card.svg"
+                      alt="Growth card"
+                    />
+                  </article>
+
+                  <article class="dt-card dt-card-wide dt-ai" data-sequence-index="5">
+                    <img
+                      class="dt-card-asset"
+                      src="/assets/section%203/AI%20full%20card.svg"
+                      alt="AI card"
+                    />
+                  </article>
+
+                  <div class="dt-center-card">
+                    <img
+                      class="dt-center-card-asset"
+                      src="/assets/section%203/DT%20System%20full%20card.svg"
+                      alt="Design Tribe System card"
+                    />
+                  </div>
+
+                  <div class="dt-dots" aria-hidden="true">
+                    <img class="dt-dot dt-dot-top" src="/assets/section%203/Dot.svg" alt="" />
+                    <img class="dt-dot dt-dot-left" src="/assets/section%203/Dot.svg" alt="" />
+                    <img class="dt-dot dt-dot-right" src="/assets/section%203/Dot.svg" alt="" />
+                    <img class="dt-dot dt-dot-bottom" src="/assets/section%203/Dot.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="human-ai-section" id="about">
+        <div class="human-ai-wrap">
+          <div class="human-ai-tagline">
+            <p>04. Human + AI&nbsp;&nbsp;|&nbsp;&nbsp;Human judgement. AI acceleration.</p>
+          </div>
+
+          <div class="human-ai-heading">
+            <h2>Guided by Human<br />Powered by AI.</h2>
+            <p>
+              AI supports every layer of our process - from research and content
+              to design systems, prototypes, evaluation, and execution. Human
+              judgement stays at the centre.
+            </p>
+          </div>
+
+          <div class="human-ai-gallery" aria-label="Human and AI capabilities animation">
+            <div class="human-ai-gallery-sticky">
+              <div class="human-ai-stage-frame">
+                <div class="human-ai-stage">
+                  <article class="human-ai-panel human-ai-panel-understand" data-human-ai-panel="understand">
+                    <img src="/assets/section%204/Understand.svg" alt="Understand card" />
+                  </article>
+
+                  <article class="human-ai-panel human-ai-panel-explore" data-human-ai-panel="explore">
+                    <img src="/assets/section%204/Explore.svg" alt="Explore card" />
+                  </article>
+
+                  <article class="human-ai-panel human-ai-panel-create" data-human-ai-panel="create">
+                    <img src="/assets/section%204/Create.svg" alt="Create card" />
+                  </article>
+
+                  <article class="human-ai-panel human-ai-panel-evaluate" data-human-ai-panel="evaluate">
+                    <img src="/assets/section%204/Evaluate.svg" alt="Evaluate card" />
+                  </article>
+
+                  <article class="human-ai-panel human-ai-panel-improve" data-human-ai-panel="improve">
+                    <img src="/assets/section%204/Improve.svg" alt="Improve card" />
+                  </article>
+
+                  <article class="human-ai-panel human-ai-panel-build" data-human-ai-panel="build">
+                    <img src="/assets/section%204/Build.svg" alt="Build card" />
+                  </article>
+
+                  <article class="human-ai-center-card" data-human-ai-panel="center">
+                    <img src="/assets/section%204/Human%20%2B%20AI.svg" alt="Human and AI card" />
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="human-ai-copy-grid">
+            <article class="human-ai-copy-card">
+              <h3>We design AI products.</h3>
+              <p>
+                We have deep experience designing AI-native applications –
+                agentic interfaces, LLM-powered tools, intelligent dashboards.
+                We understand what AI can and cannot do at a product level,
+                not just a conceptual one.
+              </p>
+            </article>
+
+            <article class="human-ai-copy-card">
+              <h3>We use AI intelligently.</h3>
+              <p>
+                We use AI tools in our practice where they genuinely
+                accelerate quality work. We never use them as a substitute
+                for human thinking, human empathy, or the irreducible craft
+                of design.
+              </p>
+            </article>
+
+            <article class="human-ai-copy-card">
+              <h3>Human back in the loop.</h3>
+              <p>
+                In a world where AI is everywhere, the studios that will
+                matter are those that restore what automation strips out:
+                warmth, character, intention, and the quiet confidence of
+                something made by people who cared.
+              </p>
+            </article>
+
+            <article class="human-ai-copy-card">
+              <h3>Economic value.</h3>
+              <p>
+                Human-centred design isn’t a soft ideal – it drives hard
+                outcomes. Higher conversion, stronger retention, deeper
+                loyalty, faster trust. The ROI of great design is real, and
+                we are fluent in making that case.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-work" id="work">
+        <div class="work-wrap">
+          <div class="work-intro">
+            <div class="work-tagline">
+              <p>05. Selected Outcomes&nbsp;|&nbsp;Systems in the real world.</p>
+            </div>
+
+            <div class="work-heading">
+              <h2>Work shaped around real business needs.</h2>
+              <p>
+                We turn business problems into digital systems,<br />
+                experiences, and communication that work in<br />
+                the real world.
+              </p>
+            </div>
+          </div>
+
+          <div class="work-project-row">
+            <article class="work-hero-card work-hero-dn">
+              <img class="work-hero-image" src="/assets/section%205/Images/DN.jpg?v=section5-images-1" alt="" />
+              <img class="work-hero-logo work-hero-logo-dn" src="/assets/section%205/Images/DN.svg?v=section5-images-1" alt="Diebold Nixdorf" />
+              <div class="work-hero-copy">
+                <h3>Transforming<br />the way people<br />bank and shop</h3>
+                <p>Diebold Nixdorf - Retail and Banking</p>
+              </div>
+            </article>
+
+            <article class="work-summary-card">
+              <div class="work-summary-top">
+                <p class="work-eyebrow">Retail &amp; Banking Experience</p>
+                <h3>Internal application UX/UI  |  Presentations  |  Marketing Communication</h3>
+              </div>
+              <div class="work-quote-block">
+                <img src="/assets/section%205/Quote.svg" alt="" />
+                <p>From presentations to product interfaces, the experience stayed connected.</p>
+              </div>
+            </article>
+
+            <article class="work-detail-card">
+              <p class="work-eyebrow">What we shaped</p>
+              <div class="work-detail-list">
+                <div class="work-detail-item">
+                  <span><img src="/assets/section%205/Internal%20Application.svg" alt="" /></span>
+                  <div>
+                    <h4>Internal application UX/UI</h4>
+                    <p>Workflow design, interface structure, and user experience improvements.</p>
+                  </div>
+                </div>
+                <div class="work-detail-item">
+                  <span><img src="/assets/section%205/Presentation.svg" alt="" /></span>
+                  <div>
+                    <h4>Presentations</h4>
+                    <p>Sales, leadership, and internal communication systems.</p>
+                  </div>
+                </div>
+                <div class="work-detail-item">
+                  <span><img src="/assets/section%205/Marketing%20Communication.svg" alt="" /></span>
+                  <div>
+                    <h4>Marketing communication</h4>
+                    <p>Campaign assets, service narratives, and branded content systems.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="work-project-row">
+            <article class="work-summary-card">
+              <div class="work-summary-top">
+                <p class="work-eyebrow">Vertical AI / Enterprise AI experience</p>
+                <h3>UX/UI applications |  Presentations  |  Marketing communication</h3>
+              </div>
+              <div class="work-quote-block">
+                <img src="/assets/section%205/Quote.svg" alt="" />
+                <p>Turning advanced AI solutions into clear, usable business experiences.</p>
+              </div>
+            </article>
+
+            <article class="work-detail-card work-detail-card-tall">
+              <p class="work-eyebrow">What we shaped</p>
+              <div class="work-detail-list">
+                <div class="work-detail-item is-compact">
+                  <span><img src="/assets/section%205/Internal%20Application.svg" alt="" /></span>
+                  <div>
+                    <h4>UX/UI applications</h4>
+                    <p>Enterprise AI workflows and product interfaces.</p>
+                  </div>
+                </div>
+                <div class="work-detail-item is-compact">
+                  <span><img src="/assets/section%205/Presentation.svg" alt="" /></span>
+                  <div>
+                    <h4>Presentation systems</h4>
+                    <p>Investor, sales, leadership, and product decks.</p>
+                  </div>
+                </div>
+                <div class="work-detail-item">
+                  <span><img src="/assets/section%205/Marketing%20Communication.svg" alt="" /></span>
+                  <div>
+                    <h4>Marketing communication</h4>
+                    <p>Campaign visuals, messaging, and go-to-market.</p>
+                  </div>
+                </div>
+                <div class="work-detail-item">
+                  <span><img src="/assets/section%205/Development.svg" alt="" /></span>
+                  <div>
+                    <h4>Development</h4>
+                    <p>Responsive builds, interactions, and production-ready execution.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-hero-card work-hero-symphony">
+              <img class="work-hero-image" src="/assets/section%205/Images/SymphonyAI.jpg?v=section5-images-1" alt="" />
+              <img class="work-hero-logo work-hero-logo-symphony" src="/assets/section%205/Images/SymphonyAI.svg?v=section5-images-1" alt="SymphonyAI" />
+              <div class="work-hero-copy">
+                <h3>The vertical AI<br />platform for industry-<br />specific models</h3>
+                <p>SymphonyAI - Retail &amp; CPG</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="work-project-row">
+            <article class="work-hero-card work-hero-prometric">
+              <img class="work-hero-image" src="/assets/section%205/Images/Prometric.jpg?v=section5-images-1" alt="" />
+              <img class="work-hero-logo work-hero-logo-prometric" src="/assets/section%205/Images/Prometric.svg?v=section5-images-1" alt="Prometric" />
+              <div class="work-hero-copy">
+                <h3>Building the<br />workforce of<br />tomorrow</h3>
+                <p>Prometric - Test administration</p>
+              </div>
+            </article>
+
+            <article class="work-summary-card">
+              <div class="work-summary-top">
+                <p class="work-eyebrow">Education &amp; Assessment Experience</p>
+                <h3>Clear communication for a global assessment leader.</h3>
+                <p class="work-summary-description">Secure assessments &amp; workforce development</p>
+              </div>
+              <div class="work-quote-block">
+                <img src="/assets/section%205/Quote.svg" alt="" />
+                <p>Designed to simplify complex services across presentations and marketing touchpoints.</p>
+              </div>
+            </article>
+
+            <article class="work-detail-card work-detail-card-prometric">
+              <p class="work-eyebrow">What we shaped</p>
+              <div class="work-detail-list">
+                <div class="work-detail-item">
+                  <span><img src="/assets/section%205/Presentation.svg" alt="" /></span>
+                  <div>
+                    <h4>Presentation systems</h4>
+                    <p>Sales decks, Keynote narratives, internal presentations.</p>
+                  </div>
+                </div>
+                <div class="work-detail-item">
+                  <span><img src="/assets/section%205/Internal%20Application.svg" alt="" /></span>
+                  <div>
+                    <h4>Storytelling Support</h4>
+                    <p>Structured content for teams and stakeholders.</p>
+                  </div>
+                </div>
+                <div class="work-detail-item">
+                  <span><img src="/assets/section%205/Marketing%20Communication.svg" alt="" /></span>
+                  <div>
+                    <h4>Marketing Assets</h4>
+                    <p>Campaign visuals, product messaging, launch support.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="process-section" id="process">
+        <div class="process-wrap">
+          <div class="process-intro">
+            <div class="process-tagline">
+              <p>06. Process&nbsp;&nbsp;|&nbsp;&nbsp;From need to working system.</p>
+            </div>
+
+            <div class="process-heading">
+              <h2>A clear way to turn business needs into working systems.</h2>
+              <p>
+                We move through focused stages - understanding the context,
+                shaping the direction, creating the system, and improving it
+                with feedback.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-scroll" aria-label="Design Tribe process stages">
+            <div class="process-sticky">
+              <div class="process-stage-list" aria-label="Process stage selector">
+                <div class="process-progress" aria-hidden="true">
+                  <span></span>
+                </div>
+
+                <div class="process-steps">
+                  <button class="process-step is-active" type="button" data-process-index="0">
+                    <span class="process-step-number">01</span>
+                    <span class="process-step-copy">
+                      <span class="process-step-title">Understand</span>
+                      <span class="process-step-description">
+                        We start with the business need - research, user
+                        context, operational gaps, content needs, and business
+                        goals.
+                      </span>
+                    </span>
+                  </button>
+
+                  <span class="process-step-divider" aria-hidden="true"></span>
+
+                  <button class="process-step" type="button" data-process-index="1">
+                    <span class="process-step-number">02</span>
+                    <span class="process-step-copy">
+                      <span class="process-step-title">Shape</span>
+                      <span class="process-step-description">
+                        We turn clarity into direction - strategy, structure,
+                        journeys, narratives, workflows, and experience maps.
+                      </span>
+                    </span>
+                  </button>
+
+                  <span class="process-step-divider" aria-hidden="true"></span>
+
+                  <button class="process-step" type="button" data-process-index="2">
+                    <span class="process-step-number">03</span>
+                    <span class="process-step-copy">
+                      <span class="process-step-title">Create</span>
+                      <span class="process-step-description">
+                        We design and build - products, websites, presentations,
+                        campaigns, interfaces, and communication systems.
+                      </span>
+                    </span>
+                  </button>
+
+                  <span class="process-step-divider" aria-hidden="true"></span>
+
+                  <button class="process-step" type="button" data-process-index="3">
+                    <span class="process-step-number">04</span>
+                    <span class="process-step-copy">
+                      <span class="process-step-title">Improve</span>
+                      <span class="process-step-description">
+                        We refine what goes live - evaluation, feedback,
+                        AI-supported review, performance learning, and
+                        continuous iteration.
+                      </span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="process-visual" aria-live="polite">
+                <img class="process-visual-image is-active" src="/assets/section%206/Understand.svg" alt="Understand stage visual" data-process-visual="0" />
+                <img class="process-visual-image" src="/assets/section%206/Shape.svg" alt="Shape stage visual" data-process-visual="1" />
+                <img class="process-visual-image" src="/assets/section%206/Create.svg" alt="Create stage visual" data-process-visual="2" />
+                <img class="process-visual-image" src="/assets/section%206/Improve.svg" alt="Improve stage visual" data-process-visual="3" />
+                <span class="process-visual-shade" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="industries-section" id="industries">
+        <div class="industries-wrap">
+          <div class="industries-intro">
+            <div class="industries-tagline">
+              <p>07. Industries&nbsp;|&nbsp;Connected system across sectors.</p>
+            </div>
+
+            <div class="industries-heading">
+              <h2>Different industries.<br />One connected system</h2>
+              <p>
+                From banking and retail to healthcare, eduction, SaaS, and
+                consumer brands, we shape digital systems that help businesses
+                move forward.
+              </p>
+            </div>
+          </div>
+
+          <div class="industries-grid" aria-label="Industries Design Tribe supports">
+            <article class="industry-card">
+              <img class="industry-card-image" src="/assets/section%207/Images/Retail%20%26%20Banking.jpg?v=section7-images-1" alt="" />
+              <div class="industry-card-copy">
+                <h3>Retail &amp; Banking</h3>
+                <p>Interfaces, systems, communication.</p>
+              </div>
+            </article>
+            <article class="industry-card">
+              <img class="industry-card-image" src="/assets/section%207/Images/Healthcare%20%26%20Wellness.jpg?v=section7-images-1" alt="" />
+              <div class="industry-card-copy">
+                <h3>Healthcare &amp; Wellness</h3>
+                <p>Journeys, packaging, content.</p>
+              </div>
+            </article>
+            <article class="industry-card">
+              <img class="industry-card-image" src="/assets/section%207/Images/Education%20%26%20Assessment.jpg?v=section7-images-1" alt="" />
+              <div class="industry-card-copy">
+                <h3>Education &amp; Assessment</h3>
+                <p>Platforms, presentations, experience.</p>
+              </div>
+            </article>
+            <article class="industry-card">
+              <img class="industry-card-image" src="/assets/section%207/Images/AI%20%26%20SaaS.jpg?v=section7-images-1" alt="" />
+              <div class="industry-card-copy">
+                <h3>AI &amp; SaaS</h3>
+                <p>Product, positioning, growth.</p>
+              </div>
+            </article>
+            <article class="industry-card">
+              <img class="industry-card-image" src="/assets/section%207/Images/Shipping%20%26%20Mailing.jpg?v=section7-images-1" alt="" />
+              <div class="industry-card-copy">
+                <h3>Shipping &amp; Mailing</h3>
+                <p>Workflows, dashboards, operations.</p>
+              </div>
+            </article>
+            <article class="industry-card">
+              <img class="industry-card-image" src="/assets/section%207/Images/Food%20%26%20Beverage.jpg?v=section7-images-1" alt="" />
+              <div class="industry-card-copy">
+                <h3>Food &amp; Beverage</h3>
+                <p>Brands, campaigns, digital touchpoints.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="bottom-blur-strip" aria-hidden="true">
+      <span class="bottom-blur-layer bottom-blur-layer-soft"></span>
+      <span class="bottom-blur-layer bottom-blur-layer-mid"></span>
+      <span class="bottom-blur-layer bottom-blur-layer-strong"></span>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
+    <script src="src/main.js?v=responsive-21"></script>
+    <script>
+      (() => {
+        const bottomBlurStrip = document.querySelector(".bottom-blur-strip");
+        const heroSection = document.querySelector(".hero");
+
+        if (bottomBlurStrip && heroSection && !window.__dtBottomBlurVisibility) {
+          window.__dtBottomBlurVisibility = true;
+
+          const updateBottomBlurVisibility = () => {
+            const heroRect = heroSection.getBoundingClientRect();
+            bottomBlurStrip.classList.toggle("is-visible", heroRect.bottom <= window.innerHeight);
+          };
+
+          updateBottomBlurVisibility();
+          window.addEventListener("scroll", updateBottomBlurVisibility, { passive: true });
+          window.addEventListener("resize", updateBottomBlurVisibility);
+        }
+
+        const processScroll = document.querySelector(".process-scroll");
+        const processSteps = Array.from(document.querySelectorAll(".process-step[data-process-index]"));
+        const processVisuals = Array.from(document.querySelectorAll(".process-visual-image[data-process-visual]"));
+        const processProgressFill = document.querySelector(".process-progress span");
+
+        if (
+          processScroll &&
+          processSteps.length &&
+          processVisuals.length &&
+          processProgressFill &&
+          !window.ScrollTrigger &&
+          !window.__dtProcessNativeFallback
+        ) {
+          window.__dtProcessNativeFallback = true;
+          processScroll.classList.add("is-native-sticky");
+
+          const progressRatios = [95 / 520, 236 / 520, 371 / 520, 1];
+          let activeIndex = -1;
+          let processFrame = 0;
+
+          const getProcessProgressHeight = (index) => {
+            const railHeight = processProgressFill.parentElement?.offsetHeight || 520;
+            return railHeight * (progressRatios[index] || 1);
+          };
+
+          const setProcessStage = (index) => {
+            const nextIndex = Math.min(Math.max(index, 0), processSteps.length - 1);
+            if (nextIndex === activeIndex) return;
+
+            activeIndex = nextIndex;
+
+            processSteps.forEach((step, stepIndex) => {
+              const isActive = stepIndex === nextIndex;
+              step.classList.toggle("is-active", isActive);
+              step.setAttribute("aria-current", isActive ? "step" : "false");
+            });
+
+            processVisuals.forEach((visual, visualIndex) => {
+              visual.classList.toggle("is-active", visualIndex === nextIndex);
+            });
+
+            processProgressFill.style.setProperty(
+              "--process-progress-height",
+              `${getProcessProgressHeight(nextIndex)}px`
+            );
+          };
+
+          const getProcessRange = () => {
+            const start = processScroll.getBoundingClientRect().top + window.scrollY;
+            const end = start + processScroll.offsetHeight - window.innerHeight;
+            return { start, end: Math.max(end, start + 1) };
+          };
+
+          const updateProcessStage = () => {
+            processFrame = 0;
+            const { start, end } = getProcessRange();
+            const progress = Math.min(Math.max((window.scrollY - start) / (end - start), 0), 1);
+            setProcessStage(Math.min(processSteps.length - 1, Math.floor(progress * processSteps.length)));
+          };
+
+          const requestProcessStageUpdate = () => {
+            if (!processFrame) {
+              processFrame = window.requestAnimationFrame(updateProcessStage);
+            }
+          };
+
+          processSteps.forEach((step) => {
+            step.addEventListener("click", () => {
+              const index = Number(step.dataset.processIndex || 0);
+              const { start, end } = getProcessRange();
+              const stageProgress = processSteps.length === 1 ? 0 : index / (processSteps.length - 1);
+              setProcessStage(index);
+              window.scrollTo({ top: start + (end - start) * stageProgress, behavior: "smooth" });
+            });
+          });
+
+          updateProcessStage();
+          window.addEventListener("scroll", requestProcessStageUpdate, { passive: true });
+          window.addEventListener("resize", requestProcessStageUpdate);
+        }
+      })();
+    </script>
+  </body>
+</html>
