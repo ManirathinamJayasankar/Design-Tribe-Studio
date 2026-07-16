@@ -15,6 +15,7 @@ if (isHardReload) {
 
 const bottomBlurStrip = document.querySelector(".bottom-blur-strip");
 const heroSection = document.querySelector(".hero");
+const contactFooter = document.querySelector(".contact-footer");
 
 if (bottomBlurStrip && heroSection) {
   let blurFrame = 0;
@@ -22,10 +23,15 @@ if (bottomBlurStrip && heroSection) {
   const updateBottomBlurVisibility = () => {
     blurFrame = 0;
     const heroRect = heroSection.getBoundingClientRect();
+    const footerRect = contactFooter?.getBoundingClientRect();
+    const isFooterVisible = footerRect
+      ? footerRect.bottom > 0 && footerRect.top < window.innerHeight
+      : false;
 
+    bottomBlurStrip.classList.toggle("is-footer-hidden", isFooterVisible);
     bottomBlurStrip.classList.toggle(
       "is-visible",
-      heroRect.bottom <= window.innerHeight
+      heroRect.bottom <= window.innerHeight && !isFooterVisible
     );
   };
 
