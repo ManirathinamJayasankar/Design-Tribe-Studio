@@ -46,6 +46,169 @@ if (bottomBlurStrip && heroSection) {
   window.addEventListener("resize", requestBottomBlurUpdate);
 }
 
+const initContactFooterCover = () => {
+  const contactSection = document.querySelector(".contact-section");
+  const contactPanel = document.querySelector(".contact-panel");
+  const contactFooterPanel = document.querySelector(".contact-footer");
+  const desktopQuery = window.matchMedia("(min-width: 761px)");
+
+  if (!contactSection || !contactPanel || !contactFooterPanel) return;
+
+  const placeholder = document.createElement("div");
+  placeholder.className = "contact-panel-placeholder";
+  placeholder.setAttribute("aria-hidden", "true");
+  contactPanel.before(placeholder);
+
+  let panelWidth = 0;
+  let panelLeft = 0;
+  let panelHeight = 0;
+  let panelMarginBottom = 0;
+  let pinnedPanelTop = 0;
+  let pinFrame = 0;
+  let isPinned = false;
+
+  const clearPin = () => {
+    isPinned = false;
+    contactPanel.classList.remove("is-contact-pinned");
+    placeholder.style.height = "0px";
+    contactPanel.style.removeProperty("--contact-pin-top");
+    contactPanel.style.removeProperty("--contact-pin-left");
+    contactPanel.style.removeProperty("--contact-pin-width");
+  };
+
+  const measureContactPanel = () => {
+    clearPin();
+
+    const rect = contactPanel.getBoundingClientRect();
+    const styles = window.getComputedStyle(contactPanel);
+
+    panelLeft = rect.left;
+    panelWidth = rect.width;
+    panelHeight = rect.height;
+    panelMarginBottom = parseFloat(styles.marginBottom || "0");
+  };
+
+  const applyPin = () => {
+    if (!isPinned) {
+      pinnedPanelTop = contactPanel.getBoundingClientRect().top;
+      isPinned = true;
+      placeholder.style.height = `${panelHeight + panelMarginBottom}px`;
+      contactPanel.classList.add("is-contact-pinned");
+    }
+
+    contactPanel.style.setProperty("--contact-pin-top", `${pinnedPanelTop}px`);
+    contactPanel.style.setProperty("--contact-pin-left", `${panelLeft}px`);
+    contactPanel.style.setProperty("--contact-pin-width", `${panelWidth}px`);
+  };
+
+  const updateContactPin = () => {
+    pinFrame = 0;
+
+    if (!desktopQuery.matches) {
+      clearPin();
+      return;
+    }
+
+    const sectionRect = contactSection.getBoundingClientRect();
+    const footerRect = contactFooterPanel.getBoundingClientRect();
+    const distanceToStop = footerRect.top - window.innerHeight;
+    const footerStillCoveringViewport = footerRect.bottom > window.innerHeight;
+    const shouldPin = sectionRect.top <= 0 && distanceToStop <= 0 && footerStillCoveringViewport;
+
+    if (!shouldPin) {
+      clearPin();
+      return;
+    }
+
+    applyPin();
+  };
+
+  const requestContactPinUpdate = () => {
+    if (!pinFrame) {
+      pinFrame = window.requestAnimationFrame(updateContactPin);
+    }
+  };
+
+  measureContactPanel();
+  updateContactPin();
+
+  window.addEventListener("scroll", requestContactPinUpdate, { passive: true });
+  window.addEventListener("resize", () => {
+    measureContactPanel();
+    requestContactPinUpdate();
+  });
+  desktopQuery.addEventListener?.("change", () => {
+    measureContactPanel();
+    requestContactPinUpdate();
+  });
+};
+
+initContactFooterCover();
+
+const initMouseGlow = () => {
+  const pointerQuery = window.matchMedia("(pointer: fine)");
+
+  if (prefersReducedMotion || !pointerQuery.matches) return;
+
+  const glow = document.createElement("span");
+  glow.className = "mouse-glow";
+  glow.setAttribute("aria-hidden", "true");
+  document.body.appendChild(glow);
+
+  let targetX = window.innerWidth / 2;
+  let targetY = window.innerHeight / 2;
+  let currentX = targetX;
+  let currentY = targetY;
+  let visible = false;
+  let animationFrame = 0;
+  let hideTimeout = 0;
+
+  const updateGlow = () => {
+    animationFrame = 0;
+
+    currentX += (targetX - currentX) * 0.18;
+    currentY += (targetY - currentY) * 0.18;
+
+    glow.style.setProperty("--mouse-glow-x", `${currentX}px`);
+    glow.style.setProperty("--mouse-glow-y", `${currentY}px`);
+    glow.style.setProperty("--mouse-glow-opacity", visible ? "1" : "0");
+
+    if (visible || Math.abs(targetX - currentX) > 0.5 || Math.abs(targetY - currentY) > 0.5) {
+      animationFrame = window.requestAnimationFrame(updateGlow);
+    }
+  };
+
+  const requestGlowUpdate = () => {
+    if (!animationFrame) {
+      animationFrame = window.requestAnimationFrame(updateGlow);
+    }
+  };
+
+  const updatePointer = (event) => {
+    if (event.pointerType && event.pointerType !== "mouse" && event.pointerType !== "pen") return;
+
+    targetX = event.clientX;
+    targetY = event.clientY;
+    visible = true;
+
+    window.clearTimeout(hideTimeout);
+    hideTimeout = window.setTimeout(() => {
+      visible = false;
+      requestGlowUpdate();
+    }, 900);
+
+    requestGlowUpdate();
+  };
+
+  window.addEventListener("pointermove", updatePointer, { passive: true });
+  window.addEventListener("pointerleave", () => {
+    visible = false;
+    requestGlowUpdate();
+  });
+};
+
+initMouseGlow();
+
 if (!prefersReducedMotion) {
   const desktopMotionQuery = window.matchMedia("(min-width: 761px)");
   let lenis;

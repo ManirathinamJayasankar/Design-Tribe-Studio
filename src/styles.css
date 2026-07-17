@@ -34,6 +34,17 @@
 html {
   overflow-x: hidden;
   scroll-behavior: auto;
+  cursor: url("/assets/Arrow%20Pointer.svg") 12 12, auto;
+}
+
+a,
+button,
+[role="button"],
+input,
+textarea,
+select,
+summary {
+  cursor: url("/assets/Arrow%20Pointer.svg") 12 12, pointer;
 }
 
 html.lenis,
@@ -72,6 +83,36 @@ body::before {
   background-size: 64px 64px;
   background-repeat: repeat;
   mix-blend-mode: multiply;
+}
+
+.mouse-glow {
+  --mouse-glow-x: 50vw;
+  --mouse-glow-y: 50vh;
+  --mouse-glow-opacity: 0;
+  position: fixed;
+  inset: 0;
+  z-index: 118;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle 320px at var(--mouse-glow-x) var(--mouse-glow-y),
+      rgba(255, 255, 255, 0.24),
+      rgba(139, 207, 255, 0.13) 30%,
+      rgba(8, 115, 86, 0.065) 50%,
+      transparent 74%
+    );
+  mix-blend-mode: soft-light;
+  opacity: var(--mouse-glow-opacity);
+  transition: opacity 520ms ease;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .mouse-glow {
+    display: none;
+  }
 }
 
 .bottom-blur-strip {
@@ -2890,15 +2931,29 @@ h1 {
 }
 
 .contact-panel {
+  --contact-panel-bottom-space: 320px;
   position: relative;
   z-index: 2;
   display: flex;
   width: 1600px;
   flex-direction: column;
   gap: 48px;
-  margin-bottom: 320px;
+  margin-bottom: var(--contact-panel-bottom-space);
   background: #f2f2f2;
   transform: translateZ(0);
+}
+
+.contact-panel-placeholder {
+  display: block;
+  height: 0;
+  pointer-events: none;
+}
+
+.contact-panel.is-contact-pinned {
+  position: fixed;
+  top: var(--contact-pin-top);
+  left: var(--contact-pin-left);
+  width: var(--contact-pin-width);
 }
 
 .contact-panel::before {
@@ -3057,7 +3112,7 @@ h1 {
 
 .contact-footer {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   width: 1600px;
   flex-direction: column;
@@ -3590,7 +3645,10 @@ h1 {
   }
 
   .contact-panel {
+    position: relative;
+    bottom: auto;
     gap: 10px;
+    --contact-panel-bottom-space: 96px;
     margin-bottom: 96px;
   }
 
@@ -4631,7 +4689,8 @@ h1 {
 
   .contact-panel {
     gap: clamp(7.5px, 0.520833vw, 10px);
-    margin-bottom: var(--desktop-section-pad);
+    --contact-panel-bottom-space: var(--desktop-section-pad);
+    margin-bottom: var(--contact-panel-bottom-space);
   }
 
   .contact-panel::before {
@@ -4817,7 +4876,8 @@ h1 {
 
   .contact-panel {
     gap: 7.5px;
-    margin-bottom: 240px;
+    --contact-panel-bottom-space: 240px;
+    margin-bottom: var(--contact-panel-bottom-space);
   }
 
   .contact-panel::before {
@@ -4913,6 +4973,7 @@ h1 {
   .contact-footer {
     width: 1200px;
     gap: 120px;
+    margin-top: 0;
     padding: 240px 0 0;
     background: #ffffff;
   }
