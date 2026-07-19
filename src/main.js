@@ -13,39 +13,6 @@ if (isHardReload) {
   });
 }
 
-const bottomBlurStrip = document.querySelector(".bottom-blur-strip");
-const heroSection = document.querySelector(".hero");
-const contactFooter = document.querySelector(".contact-footer");
-
-if (bottomBlurStrip && heroSection) {
-  let blurFrame = 0;
-
-  const updateBottomBlurVisibility = () => {
-    blurFrame = 0;
-    const heroRect = heroSection.getBoundingClientRect();
-    const footerRect = contactFooter?.getBoundingClientRect();
-    const isFooterVisible = footerRect
-      ? footerRect.bottom > 0 && footerRect.top < window.innerHeight
-      : false;
-
-    bottomBlurStrip.classList.toggle("is-footer-hidden", isFooterVisible);
-    bottomBlurStrip.classList.toggle(
-      "is-visible",
-      heroRect.bottom <= window.innerHeight && !isFooterVisible
-    );
-  };
-
-  const requestBottomBlurUpdate = () => {
-    if (!blurFrame) {
-      blurFrame = window.requestAnimationFrame(updateBottomBlurVisibility);
-    }
-  };
-
-  updateBottomBlurVisibility();
-  window.addEventListener("scroll", requestBottomBlurUpdate, { passive: true });
-  window.addEventListener("resize", requestBottomBlurUpdate);
-}
-
 const initContactFooterCover = () => {
   const contactSection = document.querySelector(".contact-section");
   const contactPanel = document.querySelector(".contact-panel");
@@ -90,7 +57,7 @@ const initContactFooterCover = () => {
 
   const applyPin = () => {
     if (!isPinned) {
-      pinnedPanelTop = contactPanel.getBoundingClientRect().top;
+      pinnedPanelTop = window.innerHeight - panelHeight - panelMarginBottom;
       isPinned = true;
       placeholder.style.height = `${panelHeight + panelMarginBottom}px`;
       contactPanel.classList.add("is-contact-pinned");
@@ -145,69 +112,71 @@ const initContactFooterCover = () => {
 
 initContactFooterCover();
 
-const initMouseGlow = () => {
+const initHeroBackgroundDrift = () => {
+  const hero = document.querySelector(".hero");
   const pointerQuery = window.matchMedia("(pointer: fine)");
 
-  if (prefersReducedMotion || !pointerQuery.matches) return;
+  if (!hero || prefersReducedMotion) return;
 
-  const glow = document.createElement("span");
-  glow.className = "mouse-glow";
-  glow.setAttribute("aria-hidden", "true");
-  document.body.appendChild(glow);
+  const stageStrength = pointerQuery.matches ? 34 : 0;
+  const perspectiveStrength = pointerQuery.matches ? 30 : 0;
+  const ease = 0.065;
+  const startedAt = window.performance.now();
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
 
-  let targetX = window.innerWidth / 2;
-  let targetY = window.innerHeight / 2;
-  let currentX = targetX;
-  let currentY = targetY;
-  let visible = false;
-  let animationFrame = 0;
-  let hideTimeout = 0;
+  const setDriftVars = (x, y, elapsed) => {
+    const autoX = Math.sin(elapsed * 0.045) * 8 + x * 16;
+    const autoY = Math.cos(elapsed * 0.038) * 6 + y * 12;
+    const stageX = x * stageStrength;
+    const stageY = y * stageStrength * 0.72;
+    const rotateX = -y * perspectiveStrength;
+    const rotateY = x * perspectiveStrength;
+    const pointerDistance = Math.min(1, Math.hypot(x, y));
+    const pointerScale = 1 + pointerDistance * 0.045;
 
-  const updateGlow = () => {
-    animationFrame = 0;
-
-    currentX += (targetX - currentX) * 0.18;
-    currentY += (targetY - currentY) * 0.18;
-
-    glow.style.setProperty("--mouse-glow-x", `${currentX}px`);
-    glow.style.setProperty("--mouse-glow-y", `${currentY}px`);
-    glow.style.setProperty("--mouse-glow-opacity", visible ? "1" : "0");
-
-    if (visible || Math.abs(targetX - currentX) > 0.5 || Math.abs(targetY - currentY) > 0.5) {
-      animationFrame = window.requestAnimationFrame(updateGlow);
-    }
+    hero.style.setProperty("--hero-auto-x", `${autoX}px`);
+    hero.style.setProperty("--hero-auto-y", `${autoY}px`);
+    hero.style.setProperty("--hero-stage-x", `${stageX.toFixed(2)}px`);
+    hero.style.setProperty("--hero-stage-y", `${stageY.toFixed(2)}px`);
+    hero.style.setProperty("--hero-stage-rotate-x", `${rotateX.toFixed(3)}deg`);
+    hero.style.setProperty("--hero-stage-rotate-y", `${rotateY.toFixed(3)}deg`);
+    hero.style.setProperty("--hero-pointer-scale", pointerScale.toFixed(4));
   };
 
-  const requestGlowUpdate = () => {
-    if (!animationFrame) {
-      animationFrame = window.requestAnimationFrame(updateGlow);
-    }
+  const animateDrift = () => {
+    const elapsed = (window.performance.now() - startedAt) / 1000;
+
+    currentX += (targetX - currentX) * ease;
+    currentY += (targetY - currentY) * ease;
+    setDriftVars(currentX, currentY, elapsed);
+    window.requestAnimationFrame(animateDrift);
   };
 
-  const updatePointer = (event) => {
-    if (event.pointerType && event.pointerType !== "mouse" && event.pointerType !== "pen") return;
+  const updateTarget = (event) => {
+    const x = event.clientX / window.innerWidth - 0.5;
+    const y = event.clientY / window.innerHeight - 0.5;
 
-    targetX = event.clientX;
-    targetY = event.clientY;
-    visible = true;
-
-    window.clearTimeout(hideTimeout);
-    hideTimeout = window.setTimeout(() => {
-      visible = false;
-      requestGlowUpdate();
-    }, 900);
-
-    requestGlowUpdate();
+    targetX = Math.max(-0.88, Math.min(0.88, x * 2));
+    targetY = Math.max(-0.88, Math.min(0.88, y * 2));
   };
 
-  window.addEventListener("pointermove", updatePointer, { passive: true });
-  window.addEventListener("pointerleave", () => {
-    visible = false;
-    requestGlowUpdate();
-  });
+  const resetTarget = () => {
+    targetX = 0;
+    targetY = 0;
+  };
+
+  if (pointerQuery.matches) {
+    window.addEventListener("pointermove", updateTarget, { passive: true });
+    window.addEventListener("pointerleave", resetTarget);
+  }
+
+  window.requestAnimationFrame(animateDrift);
 };
 
-initMouseGlow();
+initHeroBackgroundDrift();
 
 if (!prefersReducedMotion) {
   const desktopMotionQuery = window.matchMedia("(min-width: 761px)");
@@ -329,7 +298,6 @@ if (!prefersReducedMotion) {
       });
     };
 
-    gsap.set(".hero-media", { yPercent: -5, scale: 1.08 });
     gsap.set(".hero-inner", { y: 0 });
 
     gsap
@@ -341,7 +309,6 @@ if (!prefersReducedMotion) {
           scrub: 1.75,
         },
       })
-      .to(".hero-media", { yPercent: 7, scale: 1.02, ease: "none" }, 0)
       .to(".hero-inner", { y: 90, opacity: 0.72, ease: "none" }, 0)
       .to(".side-nav", { y: 42, opacity: 0.78, ease: "none" }, 0);
 

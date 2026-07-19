@@ -20,7 +20,14 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="src/styles.css?v=section9-cover-13" />
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/hero/Base%20Layer.png"
+      type="image/png"
+      fetchpriority="high"
+    />
+    <link rel="stylesheet" href="src/styles.css?v=hero-phase-table-1" />
   </head>
   <body>
     <main>
@@ -35,9 +42,41 @@
         </nav>
 
         <div class="hero-media" aria-hidden="true">
-          <video class="hero-video" autoplay muted loop playsinline preload="auto">
-            <source src="/assets/hero/DT Hero Placeholder Video.mov" />
-          </video>
+          <div class="hero-parallax-layer">
+            <div class="hero-image-layer hero-base-layer">
+              <img class="hero-background-image" src="/assets/hero/Base%20Layer.png" alt="" decoding="async" fetchpriority="high" />
+            </div>
+            <div class="hero-image-layer hero-blur-layer">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+            <div class="hero-image-layer hero-forward-movement-layer" style="--layer-phase: 0;">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+            <div class="hero-image-layer hero-forward-movement-layer" style="--layer-phase: 2;">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+            <div class="hero-image-layer hero-forward-movement-layer" style="--layer-phase: 4;">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+            <div class="hero-image-layer hero-forward-movement-layer" style="--layer-phase: 6;">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+            <div class="hero-image-layer hero-forward-movement-layer" style="--layer-phase: 1;">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+            <div class="hero-image-layer hero-forward-movement-layer" style="--layer-phase: 3;">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+            <div class="hero-image-layer hero-forward-movement-layer" style="--layer-phase: 5;">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+            <div class="hero-image-layer hero-forward-movement-layer" style="--layer-phase: 0;">
+              <img src="/assets/hero/Base%20Layer.png" alt="" decoding="async" />
+            </div>
+          </div>
+          <div class="hero-dark-overlay">
+            <img src="/assets/hero/Overlay.png" alt="" decoding="async" />
+          </div>
         </div>
 
         <div class="container hero-inner">
@@ -325,7 +364,7 @@
 
           <div class="work-project-row">
             <article class="work-hero-card work-hero-dn">
-              <img class="work-hero-image" src="/assets/section%205/Images/DN.jpg?v=section5-images-1" alt="" />
+              <img class="work-hero-background-image" src="/assets/section%205/Images/DN.jpg?v=section5-images-1" alt="" />
               <img class="work-hero-logo work-hero-logo-dn" src="/assets/section%205/Images/DN.svg?v=section5-images-1" alt="Diebold Nixdorf" />
               <div class="work-hero-copy">
                 <h3>Transforming<br />the way people<br />bank and shop</h3>
@@ -419,7 +458,7 @@
             </article>
 
             <article class="work-hero-card work-hero-symphony">
-              <img class="work-hero-image" src="/assets/section%205/Images/SymphonyAI.jpg?v=section5-images-1" alt="" />
+              <img class="work-hero-background-image" src="/assets/section%205/Images/SymphonyAI.jpg?v=section5-images-1" alt="" />
               <img class="work-hero-logo work-hero-logo-symphony" src="/assets/section%205/Images/SymphonyAI.svg?v=section5-images-1" alt="SymphonyAI" />
               <div class="work-hero-copy">
                 <h3>The vertical AI<br />platform for industry-<br />specific models</h3>
@@ -430,7 +469,7 @@
 
           <div class="work-project-row">
             <article class="work-hero-card work-hero-prometric">
-              <img class="work-hero-image" src="/assets/section%205/Images/Prometric.jpg?v=section5-images-1" alt="" />
+              <img class="work-hero-background-image" src="/assets/section%205/Images/Prometric.jpg?v=section5-images-1" alt="" />
               <img class="work-hero-logo work-hero-logo-prometric" src="/assets/section%205/Images/Prometric.svg?v=section5-images-1" alt="Prometric" />
               <div class="work-hero-copy">
                 <h3>Building the<br />workforce of<br />tomorrow</h3>
@@ -804,44 +843,12 @@
       </section>
     </main>
 
-    <div class="bottom-blur-strip" aria-hidden="true">
-      <span class="bottom-blur-layer bottom-blur-layer-soft"></span>
-      <span class="bottom-blur-layer bottom-blur-layer-mid"></span>
-      <span class="bottom-blur-layer bottom-blur-layer-strong"></span>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
-    <script src="src/main.js?v=section9-cover-13"></script>
+    <script src="src/main.js?v=hero-phase-table-1"></script>
     <script>
       (() => {
-        const bottomBlurStrip = document.querySelector(".bottom-blur-strip");
-        const heroSection = document.querySelector(".hero");
-        const contactFooter = document.querySelector(".contact-footer");
-
-        if (bottomBlurStrip && heroSection && !window.__dtBottomBlurVisibility) {
-          window.__dtBottomBlurVisibility = true;
-
-          const updateBottomBlurVisibility = () => {
-            const heroRect = heroSection.getBoundingClientRect();
-            const footerRect = contactFooter?.getBoundingClientRect();
-            const isFooterVisible = footerRect
-              ? footerRect.bottom > 0 && footerRect.top < window.innerHeight
-              : false;
-
-            bottomBlurStrip.classList.toggle("is-footer-hidden", isFooterVisible);
-            bottomBlurStrip.classList.toggle(
-              "is-visible",
-              heroRect.bottom <= window.innerHeight && !isFooterVisible
-            );
-          };
-
-          updateBottomBlurVisibility();
-          window.addEventListener("scroll", updateBottomBlurVisibility, { passive: true });
-          window.addEventListener("resize", updateBottomBlurVisibility);
-        }
-
         const processScroll = document.querySelector(".process-scroll");
         const processSteps = Array.from(document.querySelectorAll(".process-step[data-process-index]"));
         const processVisuals = Array.from(document.querySelectorAll(".process-visual-image[data-process-visual]"));
