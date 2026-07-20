@@ -112,6 +112,125 @@ const initContactFooterCover = () => {
 
 initContactFooterCover();
 
+const initFooterWordmarkReveal = () => {
+  const wordmark = document.querySelector(".contact-footer-wordmark-wrap");
+
+  if (!wordmark) return;
+
+  const updateRevealPosition = (event) => {
+    const rect = wordmark.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+    wordmark.style.setProperty("--footer-wordmark-x", `${Math.max(0, Math.min(100, x)).toFixed(2)}%`);
+    wordmark.style.setProperty("--footer-wordmark-y", `${Math.max(0, Math.min(100, y)).toFixed(2)}%`);
+  };
+
+  wordmark.addEventListener("pointerenter", updateRevealPosition, { passive: true });
+  wordmark.addEventListener("pointermove", updateRevealPosition, { passive: true });
+};
+
+initFooterWordmarkReveal();
+
+const initBottomNav = () => {
+  const nav = document.querySelector("[data-bottom-nav]");
+  const hero = document.querySelector(".hero");
+
+  if (!nav || !hero) return;
+
+  const trigger = nav.querySelector(".bottom-nav-trigger");
+  const links = [...nav.querySelectorAll(".bottom-nav-link[data-nav-section]")];
+  const trackedSections = [
+    { id: "top", active: "top" },
+    { id: "reality", active: "top" },
+    { id: "system", active: "system" },
+    { id: "about", active: "about" },
+    { id: "work", active: "work" },
+    { id: "process", active: "work" },
+    { id: "industries", active: "work" },
+    { id: "why", active: "work" },
+    { id: "contact", active: "contact" },
+  ]
+    .map((section) => ({ ...section, element: document.getElementById(section.id) }))
+    .filter((section) => section.element);
+
+  let scrollTimer = 0;
+  let closeTimer = 0;
+  let navFrame = 0;
+
+  const setExpanded = (expanded) => {
+    window.clearTimeout(closeTimer);
+    nav.classList.toggle("is-expanded", expanded);
+    trigger?.setAttribute("aria-expanded", expanded ? "true" : "false");
+  };
+
+  const requestClose = (delay = 140) => {
+    window.clearTimeout(closeTimer);
+    closeTimer = window.setTimeout(() => setExpanded(false), delay);
+  };
+
+  const setActiveSection = (activeSection) => {
+    links.forEach((link) => {
+      link.classList.toggle("is-active", link.dataset.navSection === activeSection);
+    });
+  };
+
+  const updateBottomNav = () => {
+    navFrame = 0;
+
+    const heroBottom = hero.getBoundingClientRect().bottom;
+    nav.classList.toggle("is-after-hero", heroBottom <= 72);
+
+    const probeY = window.innerHeight * 0.42;
+    const current = trackedSections.reduce((active, section) => {
+      return section.element.getBoundingClientRect().top <= probeY ? section.active : active;
+    }, "top");
+
+    setActiveSection(current);
+  };
+
+  const requestBottomNavUpdate = () => {
+    if (!navFrame) {
+      navFrame = window.requestAnimationFrame(updateBottomNav);
+    }
+  };
+
+  const handleScroll = () => {
+    nav.classList.add("is-scrolling");
+    if (!nav.matches(":hover") && !nav.contains(document.activeElement)) {
+      requestClose(80);
+    }
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      nav.classList.remove("is-scrolling");
+      requestBottomNavUpdate();
+    }, 180);
+    requestBottomNavUpdate();
+  };
+
+  nav.addEventListener("pointerenter", () => setExpanded(true), { passive: true });
+  nav.addEventListener("pointerleave", () => requestClose(), { passive: true });
+  nav.addEventListener("focusin", () => setExpanded(true));
+  nav.addEventListener("focusout", (event) => {
+    if (!nav.contains(event.relatedTarget)) {
+      requestClose();
+    }
+  });
+  links.forEach((link) => {
+    link.addEventListener("pointerdown", () => setExpanded(true));
+    link.addEventListener("click", () => {
+      setExpanded(true);
+      window.setTimeout(() => requestBottomNavUpdate(), 120);
+    });
+  });
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", requestBottomNavUpdate);
+  updateBottomNav();
+};
+
+initBottomNav();
+
 const initHeroBackgroundDrift = () => {
   const hero = document.querySelector(".hero");
   const pointerQuery = window.matchMedia("(pointer: fine)");
@@ -126,6 +245,11 @@ const initHeroBackgroundDrift = () => {
   let targetY = 0;
   let currentX = 0;
   let currentY = 0;
+  let focusTargetX = 50;
+  let focusTargetY = 50;
+  let focusX = 50;
+  let focusY = 50;
+  let focusFadeTimer = 0;
 
   const setDriftVars = (x, y, elapsed) => {
     const autoX = Math.sin(elapsed * 0.045) * 8 + x * 16;
@@ -144,6 +268,8 @@ const initHeroBackgroundDrift = () => {
     hero.style.setProperty("--hero-stage-rotate-x", `${rotateX.toFixed(3)}deg`);
     hero.style.setProperty("--hero-stage-rotate-y", `${rotateY.toFixed(3)}deg`);
     hero.style.setProperty("--hero-pointer-scale", pointerScale.toFixed(4));
+    hero.style.setProperty("--hero-focus-x", `${focusX.toFixed(2)}%`);
+    hero.style.setProperty("--hero-focus-y", `${focusY.toFixed(2)}%`);
   };
 
   const animateDrift = () => {
@@ -151,6 +277,8 @@ const initHeroBackgroundDrift = () => {
 
     currentX += (targetX - currentX) * ease;
     currentY += (targetY - currentY) * ease;
+    focusX += (focusTargetX - focusX) * 0.42;
+    focusY += (focusTargetY - focusY) * 0.42;
     setDriftVars(currentX, currentY, elapsed);
     window.requestAnimationFrame(animateDrift);
   };
@@ -161,11 +289,38 @@ const initHeroBackgroundDrift = () => {
 
     targetX = Math.max(-0.88, Math.min(0.88, x * 2));
     targetY = Math.max(-0.88, Math.min(0.88, y * 2));
+
+    const heroRect = hero.getBoundingClientRect();
+    const isInsideHero =
+      event.clientX >= heroRect.left &&
+      event.clientX <= heroRect.right &&
+      event.clientY >= heroRect.top &&
+      event.clientY <= heroRect.bottom;
+
+    if (!isInsideHero) {
+      hero.style.setProperty("--hero-focus-opacity", "0");
+      return;
+    }
+
+    focusTargetX = Math.max(0, Math.min(100, ((event.clientX - heroRect.left) / heroRect.width) * 100));
+    focusTargetY = Math.max(0, Math.min(100, ((event.clientY - heroRect.top) / heroRect.height) * 100));
+    focusX = focusTargetX;
+    focusY = focusTargetY;
+    hero.style.setProperty("--hero-focus-x", `${focusX.toFixed(2)}%`);
+    hero.style.setProperty("--hero-focus-y", `${focusY.toFixed(2)}%`);
+    hero.style.setProperty("--hero-focus-opacity", "0.95");
+
+    window.clearTimeout(focusFadeTimer);
+    focusFadeTimer = window.setTimeout(() => {
+      hero.style.setProperty("--hero-focus-opacity", "0");
+    }, 1700);
   };
 
   const resetTarget = () => {
     targetX = 0;
     targetY = 0;
+    hero.style.setProperty("--hero-focus-opacity", "0");
+    window.clearTimeout(focusFadeTimer);
   };
 
   if (pointerQuery.matches) {
