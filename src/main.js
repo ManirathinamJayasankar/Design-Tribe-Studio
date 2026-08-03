@@ -2,6 +2,35 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const navigationEntry = window.performance?.getEntriesByType?.("navigation")?.[0];
 const isHardReload = navigationEntry?.type === "reload";
 
+const initPageCurtainTransition = () => {
+  const curtain = document.querySelector("[data-page-curtain]");
+
+  if (!curtain) return;
+
+  const finishTransition = () => {
+    curtain.classList.add("is-complete");
+    curtain.setAttribute("aria-hidden", "true");
+  };
+
+  if (prefersReducedMotion) {
+    finishTransition();
+    return;
+  }
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => curtain.classList.add("is-revealing"));
+  });
+
+  curtain.lastElementChild?.addEventListener("transitionend", finishTransition, { once: true });
+  window.setTimeout(finishTransition, 900);
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) finishTransition();
+  });
+};
+
+initPageCurtainTransition();
+
 if ("scrollRestoration" in window.history) {
   window.history.scrollRestoration = "manual";
 }
@@ -134,7 +163,10 @@ initFooterWordmarkReveal();
 
 const initBottomNav = () => {
   const nav = document.querySelector("[data-bottom-nav]");
-  const hero = document.querySelector(".hero");
+  const bottomBlur = document.querySelector("[data-bottom-blur]");
+  const hero = document.querySelector(".hero, .about-hero");
+  const footer = document.querySelector(".contact-footer");
+  const isAboutPage = document.body.classList.contains("about-page");
 
   if (!nav || !hero) return;
 
@@ -179,12 +211,19 @@ const initBottomNav = () => {
     navFrame = 0;
 
     const heroBottom = hero.getBoundingClientRect().bottom;
-    nav.classList.toggle("is-after-hero", heroBottom <= 72);
+    const isAfterHero = heroBottom <= 72;
+    const isOverFooter = footer ? footer.getBoundingClientRect().top < window.innerHeight : false;
+
+    nav.classList.toggle("is-after-hero", isAfterHero);
+    nav.classList.toggle("is-over-footer", isOverFooter);
+    bottomBlur?.classList.toggle("is-visible", isAfterHero && !isOverFooter);
 
     const probeY = window.innerHeight * 0.42;
-    const current = trackedSections.reduce((active, section) => {
-      return section.element.getBoundingClientRect().top <= probeY ? section.active : active;
-    }, "top");
+    const current = isAboutPage
+      ? "about"
+      : trackedSections.reduce((active, section) => {
+          return section.element.getBoundingClientRect().top <= probeY ? section.active : active;
+        }, "top");
 
     setActiveSection(current);
   };
@@ -235,7 +274,7 @@ const initHeroBackgroundDrift = () => {
   const hero = document.querySelector(".hero");
   const pointerQuery = window.matchMedia("(pointer: fine)");
 
-  if (!hero || prefersReducedMotion) return;
+  if (!hero || hero.classList.contains("hero-static") || prefersReducedMotion) return;
 
   const stageStrength = pointerQuery.matches ? 34 : 0;
   const perspectiveStrength = pointerQuery.matches ? 30 : 0;
