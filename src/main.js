@@ -167,6 +167,7 @@ const initBottomNav = () => {
   const hero = document.querySelector(".hero, .about-hero");
   const footer = document.querySelector(".contact-footer");
   const isAboutPage = document.body.classList.contains("about-page");
+  const isImpactPage = document.body.classList.contains("impact-page");
 
   if (!nav || !hero) return;
 
@@ -202,8 +203,9 @@ const initBottomNav = () => {
   };
 
   const setActiveSection = (activeSection) => {
+    const pageSection = isAboutPage ? "about" : isImpactPage ? "work" : "top";
     links.forEach((link) => {
-      link.classList.toggle("is-active", link.dataset.navSection === activeSection);
+      link.classList.toggle("is-active", link.dataset.navSection === pageSection);
     });
   };
 
@@ -221,7 +223,7 @@ const initBottomNav = () => {
     const probeY = window.innerHeight * 0.42;
     const current = isAboutPage
       ? "about"
-      : trackedSections.reduce((active, section) => {
+      : isImpactPage ? "work" : trackedSections.reduce((active, section) => {
           return section.element.getBoundingClientRect().top <= probeY ? section.active : active;
         }, "top");
 
@@ -248,6 +250,10 @@ const initBottomNav = () => {
   };
 
   nav.addEventListener("pointerenter", () => setExpanded(true), { passive: true });
+  trigger?.addEventListener("click", () => setExpanded(!nav.classList.contains("is-expanded")));
+  nav.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") { nav.blur(); trigger?.blur(); setExpanded(false); }
+  });
   nav.addEventListener("pointerleave", () => requestClose(), { passive: true });
   nav.addEventListener("focusin", () => setExpanded(true));
   nav.addEventListener("focusout", (event) => {
@@ -492,19 +498,24 @@ if (!prefersReducedMotion) {
       });
     };
 
-    gsap.set(".hero-inner", { y: 0 });
+    const pageHero = document.querySelector(".hero, .about-hero");
+    const heroCopy = pageHero?.querySelector(".hero-inner, .about-hero-copy");
+    const heroNav = pageHero?.querySelector(".side-nav, .about-side-nav");
 
-    gsap
+    if (pageHero && heroCopy && heroNav) {
+      gsap.set(heroCopy, { y: 0 });
+      gsap
       .timeline({
         scrollTrigger: {
-          trigger: ".hero",
+          trigger: pageHero,
           start: "top top",
           end: "bottom top",
           scrub: 1.75,
         },
       })
-      .to(".hero-inner", { y: 90, opacity: 0.72, ease: "none" }, 0)
-      .to(".side-nav", { y: 42, opacity: 0.78, ease: "none" }, 0);
+      .to(heroCopy, { y: 90, opacity: 0.72, ease: "none" }, 0)
+      .to(heroNav, { y: 42, opacity: 0.78, ease: "none" }, 0);
+    }
 
     addScrollDepth(".visual-bg", {
       trigger: (target) => target.closest(".reality-visual"),

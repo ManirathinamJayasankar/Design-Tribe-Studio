@@ -1,10 +1,13 @@
 const initAboutPageEffects = () => {
   const page = document.body;
-  const hero = document.querySelector(".about-hero");
+  const hero = document.querySelector(".about-hero, .hero");
   const teamImage = document.querySelector(".about-team-image");
+  const newRevealItems = [...document.querySelectorAll(
+    ".about-people-inner > h2, .about-person, .about-contact-cta-card .contact-copy, .about-contact-cta-card .contact-actions"
+  )];
   const revealItems = [
     ...document.querySelectorAll(".about-stat"),
-    document.querySelector(".about-stats-divider"),
+    ...document.querySelectorAll(".about-stats-divider"),
     document.querySelector(".about-origin-intro"),
     document.querySelector(".about-origin-statement"),
     ...document.querySelectorAll(".about-story-label"),
@@ -12,6 +15,7 @@ const initAboutPageEffects = () => {
     ...document.querySelectorAll(".about-story-divider"),
     document.querySelector(".about-clients-inner > h2"),
     ...document.querySelectorAll(".about-client-card"),
+    ...newRevealItems,
   ].filter(Boolean);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -21,6 +25,14 @@ const initAboutPageEffects = () => {
 
   if (!page.classList.contains("about-page") || !hero) return;
 
+  newRevealItems.forEach((item) => item.classList.add("about-scroll-reveal"));
+  document.querySelectorAll(".about-people-grid").forEach((grid) => {
+    const columns = window.getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+    [...grid.children].forEach((card, index) => {
+      card.style.setProperty("--about-reveal-delay", `${(index % columns) * 90}ms`);
+    });
+  });
+
   page.classList.add("about-effects-ready");
 
   const showEverything = () => {
@@ -29,7 +41,7 @@ const initAboutPageEffects = () => {
     revealItems.forEach((item) => item.classList.add("is-visible"));
   };
 
-  if (reduceMotion) {
+  if (reduceMotion || !("IntersectionObserver" in window)) {
     showEverything();
     return;
   }

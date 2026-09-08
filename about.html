@@ -7,53 +7,64 @@
       name="description"
       content="Design Tribe is a systematic design studio built on rigour, driven by craft, and committed to outcomes that matter."
     />
-    <title>About Us — Design Tribe</title>
+    <title>About us — Design Tribe</title>
     <link rel="stylesheet" href="/src/styles.css?v=shared-site-effects-1" />
-    <link rel="stylesheet" href="/src/about.css?v=stroke-slow-1" />
+    <link rel="stylesheet" href="/src/about.css?v=fluid-layout-1" />
+    <link rel="stylesheet" href="/src/footer.css?v=shared-footer-3" />
+    <link rel="stylesheet" href="/src/about-updated.css?v=5" />
+    <link rel="stylesheet" href="/src/bottom-nav.css?v=4" />
   </head>
   <body class="about-page">
+    <div class="page-curtain" data-page-curtain role="status" aria-label="Loading" aria-live="polite">
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+      <span class="page-curtain-panel"></span>
+    </div>
     <main>
-      <section class="about-hero" id="top" aria-labelledby="about-hero-title">
-        <div class="about-hero-layout">
-          <nav class="about-side-nav" aria-label="Primary navigation">
-            <a class="about-brand" href="/" aria-label="Design Tribe home">
+      <section class="hero hero-static hero-updated section-dark" id="top" aria-labelledby="about-hero-title">
+          <nav class="side-nav" aria-label="Primary navigation">
+            <a class="brand" href="/" aria-label="Design Tribe home">
               <img src="/assets/hero/DT%20Logo%20White.svg" alt="Design Tribe" />
             </a>
-
-            <a href="/#system">
-              <span class="about-nav-icon" aria-hidden="true"></span>
-              <span>System</span>
-            </a>
-            <a href="/#work">
-              <span class="about-nav-icon" aria-hidden="true"></span>
-              <span>Outcomes</span>
+            <a href="/impact.html">
+              <img class="nav-icon" src="/assets/hero/Plus%20Sign.svg" alt="" />
+              <span>Impacts</span>
             </a>
             <a href="/about.html" aria-current="page">
-              <span class="about-nav-icon" aria-hidden="true"></span>
-              <span>About Us</span>
+              <img class="nav-icon" src="/assets/hero/Plus%20Sign.svg" alt="" />
+              <span>About us</span>
+            </a>
+            <a href="/contact.html">
+              <img class="nav-icon" src="/assets/hero/Plus%20Sign.svg" alt="" />
+              <span>Get in touch</span>
             </a>
           </nav>
 
-          <div class="about-hero-copy">
-            <h1 id="about-hero-title">A different kind<br />of design studio.</h1>
-            <p>
-              Built on rigour. Driven by craft. Committed to<br class="desktop-break" />
-              outcomes that matter.
-            </p>
+          <div class="hero-media" aria-hidden="true">
+            <img class="hero-background-image" src="/assets/About%20Us/Updated/Healthcare%201.jpg" alt="" decoding="async" fetchpriority="high" />
+            <div class="hero-dark-overlay"></div>
           </div>
-        </div>
+          <div class="container hero-inner">
+            <h1 id="about-hero-title">Design, engineered.<br />Not decorated.</h1>
+          </div>
       </section>
 
       <nav class="bottom-nav-shell" aria-label="Floating navigation" data-bottom-nav>
         <button class="bottom-nav-trigger" type="button" aria-expanded="false" aria-controls="bottom-nav-menu">
-          <img src="/assets/Nav%20Bar.svg?v=bottom-nav-4" alt="Design Tribe navigation" />
+          <img src="/assets/Bottom%20Nav%20Updated.svg" alt="Design Tribe navigation" />
         </button>
         <div class="bottom-nav-menu" id="bottom-nav-menu">
           <a class="bottom-nav-link bottom-nav-home" href="/" data-nav-section="top">Home</a>
-          <a class="bottom-nav-link bottom-nav-system" href="/#system" data-nav-section="system">Systems</a>
-          <a class="bottom-nav-link bottom-nav-work" href="/#work" data-nav-section="work">Outcomes</a>
-          <a class="bottom-nav-link bottom-nav-about is-active" href="/about.html" data-nav-section="about">About Us</a>
-          <a class="bottom-nav-link bottom-nav-contact" href="/#contact" data-nav-section="contact">Get in Touch</a>
+          <a class="bottom-nav-link bottom-nav-work" href="/impact.html" data-nav-section="work">Impacts</a>
+          <a class="bottom-nav-link bottom-nav-about is-active" href="/about.html" data-nav-section="about">About us</a>
+          <a class="bottom-nav-link bottom-nav-contact" href="/contact.html" data-nav-section="contact">Get in touch</a>
         </div>
       </nav>
 
@@ -63,12 +74,26 @@
         <span class="site-bottom-blur-layer site-bottom-blur-layer-strong"></span>
       </div>
 
-      <section class="about-team-image-section" aria-label="Design Tribe team">
-        <div class="about-team-image">
-          <img
-            src="/assets/About%20Us/team%20Placeholder.jpg"
-            alt="Design team collaborating around a table"
-          />
+      <section class="about-people-section" aria-labelledby="core-team-title">
+        <div class="about-people-inner">
+          <h2 id="core-team-title">Our core team</h2>
+          <div class="about-people-grid">
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Deepak.svg" alt="Deepak Singh" width="160" height="160" loading="lazy" /><div><h3>Deepak Singh</h3><p class="about-person-role">Founder | IIT Bombay</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/ixdeepak/" target="_blank" rel="noopener noreferrer" aria-label="Deepak Singh on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/James.svg" alt="Chadrakesh Lal" width="160" height="160" loading="lazy" /><div><h3>Chadrakesh Lal</h3><p class="about-person-role">Senior Partner | IIT Bombay</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/chandrakeshlal/" target="_blank" rel="noopener noreferrer" aria-label="Chadrakesh Lal on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Chinmay.svg" alt="Chinmay Mehta" width="160" height="160" loading="lazy" /><div><h3>Chinmay Mehta</h3><p class="about-person-role">Sr. Sales Executive | OP Jindal Chhattisgarh</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/chinmay-mehta-0ab040150/" target="_blank" rel="noopener noreferrer" aria-label="Chinmay Mehta on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Mani.svg" alt="Manirathinam" width="160" height="160" loading="lazy" /><div><h3>Manirathinam</h3><p class="about-person-role">Lead Presentation Designer | REC Vellore</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/manirathinam-jayasankar-b556ba88/" target="_blank" rel="noopener noreferrer" aria-label="Manirathinam on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Nawang.svg" alt="Nawang Yolmo" width="160" height="160" loading="lazy" /><div><h3>Nawang Yolmo</h3><p class="about-person-role">Sr. UI Developer | IIT Bombay</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/nawang-yolmo-b10b62135/" target="_blank" rel="noopener noreferrer" aria-label="Nawang Yolmo on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Nayan.svg" alt="Nayan Prakash" width="160" height="160" loading="lazy" /><div><h3>Nayan Prakash</h3><p class="about-person-role">Sr. Product Developer | T John Bangalore</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/nayan-prakash-lal-32057474/" target="_blank" rel="noopener noreferrer" aria-label="Nayan Prakash on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Raja.svg" alt="Rajarathinam" width="160" height="160" loading="lazy" /><div><h3>Rajarathinam</h3><p class="about-person-role">Sr. UX/UI Designer | NIFT Delhi</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/rajarathinamm/" target="_blank" rel="noopener noreferrer" aria-label="Rajarathinam on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Rajdeep.svg" alt="Rajdeep Basumatary" width="160" height="160" loading="lazy" /><div><h3>Rajdeep Basumatary</h3><p class="about-person-role">Lead UX Designer | IIT Bombay</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/rajdeepbasumatary/" target="_blank" rel="noopener noreferrer" aria-label="Rajdeep Basumatary on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Rajnish.svg" alt="Rajnish Anand" width="160" height="160" loading="lazy" /><div><h3>Rajnish Anand</h3><p class="about-person-role">Sr. UX/UI Designer | NIFT Patna</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/rajnish-anand-2b53271b4/" target="_blank" rel="noopener noreferrer" aria-label="Rajnish Anand on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Sachchid.svg" alt="Sachchid Chhatbar" width="160" height="160" loading="lazy" /><div><h3>Sachchid Chhatbar</h3><p class="about-person-role">Sr. Sales Executive | Ahmedabad University</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/sachchid/" target="_blank" rel="noopener noreferrer" aria-label="Sachchid Chhatbar on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Sachin.svg" alt="Dr. Sachin Tanwar" width="160" height="160" loading="lazy" /><div><h3>Dr. Sachin Tanwar</h3><p class="about-person-role">Managing Director | IIT Delhi &amp; IIT Bombay</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/sachin251287/" target="_blank" rel="noopener noreferrer" aria-label="Dr. Sachin Tanwar on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Priya.svg" alt="Shanmugapriya" width="160" height="160" loading="lazy" /><div><h3>Shanmugapriya</h3><p class="about-person-role">Sr. Presentation Designer | SREC Coimbatore</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/shanmuga-priya-v-c-7243b564/" target="_blank" rel="noopener noreferrer" aria-label="Shanmugapriya on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Swati.svg" alt="Swati Sucharita Nahak" width="160" height="160" loading="lazy" /><div><h3>Swati Sucharita Nahak</h3><p class="about-person-role">Sr. UX/UI Designer | NIFT Delhi</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/swati-sucharita-nahak-44ba4b1aa/" target="_blank" rel="noopener noreferrer" aria-label="Swati Sucharita Nahak on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Vivek.svg" alt="Vivek Kumar" width="160" height="160" loading="lazy" /><div><h3>Vivek Kumar</h3><p class="about-person-role">Sr. UX/UI Designer | NIFT Delhi</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/vivek-kumar-2aa2931a3/" target="_blank" rel="noopener noreferrer" aria-label="Vivek Kumar on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+            <article class="about-person"><img class="about-person-photo" src="/assets/About%20Us/Updated/Yashwanth.svg" alt="Yashwanth Sampath" width="160" height="160" loading="lazy" /><div><h3>Yashwanth Sampath</h3><p class="about-person-role">Sr. WebDeveloper | KCT Coimbatore</p><a class="about-person-linkedin" href="https://www.linkedin.com/in/yashwanth-s-6218461b5/" target="_blank" rel="noopener noreferrer" aria-label="Yashwanth Sampath on LinkedIn (opens in a new tab)">LinkedIn</a></div></article>
+          </div>
         </div>
       </section>
 
@@ -82,11 +107,11 @@
               </article>
               <article class="about-stat">
                 <h2>8</h2>
-                <p>Disciplines - Brand, UX, web, AI design, systems, content, presentation</p>
+                <p>years of enterprise design experience - UX Design, UX Research &amp; Engineering</p>
               </article>
               <article class="about-stat">
-                <h2>1</h2>
-                <p>Standard - Extraordinary, every time, regardless of project size</p>
+                <h2>10</h2>
+                <p>Enterprise clients served, built AI, SAAS &amp; consumer experiences from scratch</p>
               </article>
             </div>
             <div class="about-stats-divider" aria-hidden="true"></div>
@@ -95,10 +120,10 @@
           <div class="about-origin">
             <div class="about-origin-intro">
               <h2>Founded by<br />IIT Bombay alumni</h2>
-              <p>We didn't leave one of India's most demanding institutions to do ordinary work.</p>
+              <p>We don’t solve ordinary business problems</p>
             </div>
             <p class="about-origin-statement">
-              <span>We are a systematic design studio </span><strong>founded by a core team of IIT Bombay graduates - people trained to solve the hardest problems with precision, rigour, and an uncommon insistence on getting things right.</strong>
+              We're a systematic design studio built by practitioners who've shipped inside real enterprise constraints - not just presented concepts in a pitch deck.
             </p>
           </div>
         </div>
@@ -108,15 +133,12 @@
         <div class="about-story-inner">
           <article class="about-story-row about-story-row-intro">
             <div class="about-story-label">
-              <h2>Where we came from</h2>
-              <p>Why it matters</p>
+              <h2>Why it matters</h2>
             </div>
             <div class="about-story-content">
-              <h3><span>We didn't set out to build an agency.</span><br />We set out to solve a problem we kept running into</h3>
+              <h3><span>We didn't set out to build an agency.</span><br />We set out to solve a problem we kept running into.</h3>
               <div class="about-story-body">
-                <p>organizations with genuinely great ideas being let down by design that couldn't carry their weight. Brands that looked generic in categories that deserved distinctiveness. Products that worked technically but failed humanly. AI capabilities locked inside interfaces nobody wanted to use.</p>
-                <p>The studio was founded by a team that came up through IIT Bombay - an environment that teaches you, above all else, that the quality of your thinking is the only thing you truly control. We brought that discipline into design: the belief that every brief deserves first-principles thinking, that the obvious answer is rarely the best one, and that the gap between good and exceptional is almost always a gap in commitment rather than capability.</p>
-                <p>Today we are a full-service design partner for ambitious organizations - from emerging startups to established enterprises navigating complex transformations. We are deliberately selective about the work we take on, because we only want to do work we can stand behind completely.</p>
+                <p>Too many design partners hand off files and disappear before the metric moves. We started UXUI Studio to close that gap - accountable from the first sketch to the shipped, measured result.</p>
               </div>
             </div>
           </article>
@@ -127,7 +149,7 @@
             <div class="about-story-label"><h2>The beginning</h2></div>
             <div class="about-story-content">
               <h3>Built in the halls of India's most demanding institute.</h3>
-              <div class="about-story-body"><p>Our founding team met at IIT Bombay - drawn together by a shared obsession with how things work, why they fail, and how design could be the lever that changes both. The same problem-solving intensity that defined our academic years defines how we approach client work today.</p></div>
+              <div class="about-story-body"><p>Founded by Deepak Singh, who spent a decade in enterprise, public-sector, and startup product design roles. The team he's built is led by IIT Bombay and IIT Delhi alumni with over a decade at Google, McKinsey &amp; Company, and Samsung.</p></div>
             </div>
           </article>
 
@@ -137,7 +159,7 @@
             <div class="about-story-label"><h2>The conviction</h2></div>
             <div class="about-story-content">
               <h3><span>Design is not decoration. </span>It's one of the<br />highest-leverage investments a business can make.</h3>
-              <div class="about-story-body"><p>We started the studio because we believed - and still believe - that most organizations dramatically underinvest in the quality of their design. Not the quantity of it. The quality. We exist to change that calculus for the organizations we work with.</p></div>
+              <div class="about-story-body"><p>An interface doesn't just look thoughtful - it changes what a customer does next. We hold every design decision to the same scrutiny a CFO applies to any other line item, because that's the standard our clients hold everything else to.</p></div>
             </div>
           </article>
 
@@ -146,8 +168,8 @@
           <article class="about-story-row">
             <div class="about-story-label"><h2>The scope</h2></div>
             <div class="about-story-content">
-              <h3>Syatematic-service, by design.</h3>
-              <div class="about-story-body"><p>We built a genuinely integrated practice - brand strategy through to AI product design - because the best outcomes happen when the people thinking about your brand are the same people shaping your user experience. Fragmentation is the enemy of coherence.</p></div>
+              <h3>One system, applied end to end - not a service menu.</h3>
+              <div class="about-story-body"><p>We don't hand you off between departments. The same team that shapes your strategy designs the interface, builds the design system, and ships the code - so nothing gets lost along the way.</p></div>
             </div>
           </article>
 
@@ -156,8 +178,8 @@
           <article class="about-story-row">
             <div class="about-story-label"><h2>The conviction</h2></div>
             <div class="about-story-content">
-              <h3>At the frontier of what design can do next.</h3>
-              <div class="about-story-body"><p>We are particularly invested in the design of AI-native experiences - a frontier that is being shaped right now, by teams who are either thinking carefully about it or improvising loudly. We are firmly in the former camp.</p></div>
+              <h3>At the edge of what design can do next.</h3>
+              <div class="about-story-body"><p>AI is changing what's possible inside a product - and inside our own process. We're building the discipline to use it well: faster research, faster iteration, judgment that stays firmly human.</p></div>
             </div>
           </article>
         </div>
@@ -165,7 +187,7 @@
 
       <section class="about-clients-section" aria-labelledby="about-clients-title">
         <div class="about-clients-inner">
-          <h2 id="about-clients-title">Our clients</h2>
+          <h2 id="about-clients-title"><strong>Real clients.</strong><br />Real stakes.</h2>
           <div class="about-clients-grid">
             <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/SyphonyAI.svg" alt="SymphonyAI" /></div>
             <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/PB.svg" alt="Pitney Bowes" /></div>
@@ -198,70 +220,57 @@
       <section class="contact-section about-contact-section" id="contact">
         <div class="contact-wrap">
           <div class="contact-panel about-contact-panel">
-            <div class="contact-cta-card about-contact-cta-card">
+            <div class="contact-cta-card about-contact-cta-card about-get-in-touch">
+              <img class="contact-cta-background" src="/assets/section%209/Updated/Footer%20Image.svg" alt="" loading="lazy" />
               <div class="contact-copy">
-                <h2>Bring us something ambitious.<br />We’ll make it possible.</h2>
-                <p>Let's talk about how rigorous design thinking — backed by the credentials and craft to deliver it - can become your organization's most durable competitive advantage.</p>
+                <h2>Bring us the problem<br />you haven't solved yet.</h2>
+                <p>If it's ambitious, overdue, or stuck in committee -<br />that's usually where we do our best work.</p>
               </div>
 
               <div class="contact-actions">
-                <a class="contact-button contact-button-primary" href="mailto:hello@uxuistudio.in">
-                  <span>Get Started</span>
+                <a class="contact-button contact-button-primary" href="/contact.html">
+                  <span>Get in touch</span>
                   <img src="/assets/section%209/Black%20Arrow.svg?v=section9-1" alt="" />
-                </a>
-                <a class="contact-button contact-button-secondary" href="/#work">
-                  <span>View Outcomes</span>
-                  <img src="/assets/section%209/White%20Arrow.svg?v=section9-1" alt="" />
                 </a>
               </div>
             </div>
           </div>
 
-          <footer class="contact-footer" aria-label="Design Tribe footer">
-            <div class="contact-footer-grid">
-              <div class="contact-company">
-                <img class="contact-footer-logo" src="/assets/Footer/DT%20Footer%20Logo%201.svg?v=footer-2" alt="Design Tribe" />
-                <h3>Design Tribe</h3>
-                <p>H P -03-01, Lower Ground Floor<br />Birla Navya, Amoda 2, Sector 63 A<br />Gurgaon, Haryana, India 122102</p>
+          <footer class="contact-footer footer-updated" aria-label="Design Tribe footer">
+            <div class="footer-updated-grid">
+              <div class="footer-offices">
+                <img class="footer-updated-logo" src="/assets/Footer/Updated/Logo.svg" alt="Design Tribe" width="289" height="108" />
+                <div class="footer-addresses">
+                  <div class="footer-office">
+                    <h3>India Office</h3>
+                    <p>H P -03-01, Lower Ground Floor<br />Birla Navya, Amoda 2, Sector 63 A<br />Gurgaon, Haryana, India 122102</p>
+                  </div>
+                  <div class="footer-office">
+                    <h3>USA Office</h3>
+                    <p>UXUI Studio LLC<br />30 N Gould St Ste R Sheridan,<br />WY 82801, United States</p>
+                  </div>
+                </div>
               </div>
-
-              <nav class="contact-footer-column contact-footer-nav" aria-label="Footer navigation">
+              <nav class="footer-updated-links" aria-label="Footer navigation">
                 <h3>Sections</h3>
                 <a href="/">Home</a>
-                <a href="/#system">Systems</a>
-                <a href="/#work">Outcomes</a>
-                <a href="/about.html">About Us</a>
+                <a href="/impact.html">Impacts</a>
+                <a href="/about.html">About us</a>
+                <a href="/contact.html">Get in touch</a>
               </nav>
-
-              <nav class="contact-footer-column contact-footer-capabilities" aria-label="Footer capabilities">
-                <h3>Capabilities</h3>
-                <a href="/#system">Strategy</a>
-                <a href="/#system">Experience</a>
-                <a href="/#system">Communication</a>
-                <a href="/#system">Technology</a>
-                <a href="/#work">Growth</a>
-                <a href="/#about">AI</a>
-              </nav>
-
-              <nav class="contact-footer-column contact-footer-social" aria-label="Contact and social links">
+              <nav class="footer-updated-links" aria-label="Contact and social links">
                 <h3>Connect</h3>
                 <a href="mailto:hello@uxuistudio.in">hello@uxuistudio.in</a>
-                <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
-                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook</a>
+                <a href="https://www.linkedin.com/company/thedesigntribestudio/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/thedesigntribestudio/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://www.facebook.com/thedesigntribestudio/?locale=mt_MT" target="_blank" rel="noopener noreferrer">Facebook</a>
               </nav>
             </div>
-
-            <div class="contact-footer-brand">
-              <div class="contact-footer-wordmark-wrap" aria-label="Design Tribe">
-                <img class="contact-footer-wordmark contact-footer-wordmark-default" src="/assets/Footer/Design%20Tribe%201.svg?v=footer-2" alt="" aria-hidden="true" />
-                <img class="contact-footer-wordmark contact-footer-wordmark-hover" src="/assets/Footer/Design%20Tribe.svg?v=footer-green-1" alt="" aria-hidden="true" />
-              </div>
-              <div class="contact-footer-strip">
-                <div class="contact-footer-strip-inner">
-                  <p>Build for modern business</p>
-                  <p>@Design Tribe 2026</p>
-                </div>
+            <div class="footer-updated-brand">
+              <img class="footer-updated-wordmark" src="/assets/Footer/Updated/Wordmark.svg" alt="Design Tribe" width="1135" height="208" />
+              <div class="footer-updated-strip">
+                <p>Build for modern business</p>
+                <p>@Design Tribe 2026</p>
               </div>
             </div>
           </footer>
@@ -272,7 +281,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.25/dist/lenis.min.js"></script>
-    <script src="/src/main.js?v=shared-site-effects-1"></script>
-    <script src="/src/about.js?v=about-footer-1"></script>
+    <script src="/src/main.js?v=shared-hero-effects-2"></script>
+    <script src="/src/about.js?v=about-reveals-3"></script>
   </body>
 </html>
