@@ -1,0 +1,73 @@
+/* Shared editorial typography; hero, card and footer sizes remain independent. */
+:root {
+  --section-title-size: clamp(38px, 3.125vw, 60px);
+  --section-description-size: clamp(18px, 1.25vw, 24px);
+  --heading-ink: #2e2e2e;
+  --description-ink: #4e4e4e;
+}
+
+body .section-work .work-heading > h2,
+body :is(.connected-overview-copy, .work-heading, .trusted-leaders-copy,
+  .industries-updated-copy, .about-people-inner, .impact-wrap) > h2 {
+  font-family: "InterVariable", Arial, sans-serif;
+  font-size: var(--section-title-size);
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  line-height: 1.133333;
+  letter-spacing: -.025em;
+  color: var(--heading-ink);
+}
+
+body .section-work .work-heading > p,
+body :is(.connected-overview-copy, .work-heading, .trusted-leaders-copy,
+  .industries-updated-copy) > p {
+  font-family: "InterVariable", Arial, sans-serif;
+  font-size: var(--section-description-size);
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  line-height: 1.333333;
+  letter-spacing: -.015em;
+  color: var(--description-ink);
+}
+
+/* Let longer introductions grow when text wraps or the user zooms. */
+body .section-work .work-intro,
+body :is(.connected-overview-copy, .trusted-leaders-copy, .work-intro) {
+  height: auto;
+}
+
+body :is(.about-origin-intro h2, .about-story-label h2,
+  .about-story-content h3, .about-clients-inner > h2) {
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  letter-spacing: -.025em;
+  color: var(--heading-ink);
+}
+
+body :is(.about-origin-intro p, .about-story-label p, .about-story-body p) {
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  letter-spacing: -.015em;
+  color: var(--description-ink);
+}
+
+body .contact-copy h2 {
+  font-weight: 500;
+  font-variation-settings: "wght" 500;
+  line-height: 1.133333;
+  letter-spacing: -.025em;
+}
+
+body .contact-copy p {
+  font-weight: 400;
+  font-variation-settings: "wght" 400;
+  line-height: 1.333333;
+  letter-spacing: -.015em;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --section-title-size: clamp(32px, 5vw, 38px);
+    --section-description-size: 20px;
+  }
+}

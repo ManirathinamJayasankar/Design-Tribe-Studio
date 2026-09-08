@@ -45,7 +45,7 @@
   left: -3cqw;
   top: 0;
   height: 7.375cqw;
-  border-left: 1px solid rgba(255,255,255,.65);
+  border-left: 1px solid var(--stroke-color);
 }
 .footer-updated h3,
 .footer-updated p,
@@ -105,7 +105,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 100vw;
-  border-top: 1px solid rgba(255,255,255,.96);
+  border-top: 1px solid var(--stroke-color);
 }
 .footer-updated-strip p {
   font-size: .875cqw;
