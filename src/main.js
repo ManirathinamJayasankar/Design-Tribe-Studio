@@ -249,8 +249,11 @@ const initBottomNav = () => {
     requestBottomNavUpdate();
   };
 
-  nav.addEventListener("pointerenter", () => setExpanded(true), { passive: true });
-  trigger?.addEventListener("click", () => setExpanded(!nav.classList.contains("is-expanded")));
+  nav.addEventListener("pointerenter", (event) => {
+    if (event.pointerType === "mouse") setExpanded(true);
+  }, { passive: true });
+  // Focus can open the menu before click on touch devices; do not toggle it shut.
+  trigger?.addEventListener("click", () => setExpanded(true));
   nav.addEventListener("keydown", (event) => {
     if (event.key === "Escape") { nav.blur(); trigger?.blur(); setExpanded(false); }
   });

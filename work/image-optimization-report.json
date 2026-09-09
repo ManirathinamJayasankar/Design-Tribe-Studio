@@ -1,0 +1,230 @@
+[
+  {
+    "input": "assets/hero/Updated/Agriculture.png",
+    "destination": "assets/optimized/498051dee2.webp",
+    "before": 2469126,
+    "after": 1535368
+  },
+  {
+    "input": "assets/Impact/home-sai.png",
+    "destination": "assets/optimized/62adf5b796.webp",
+    "before": 2721037,
+    "after": 2039610
+  },
+  {
+    "input": "assets/Impact/home-dn.png",
+    "destination": "assets/optimized/415d6d0e75.webp",
+    "before": 2104281,
+    "after": 1555400
+  },
+  {
+    "input": "assets/Contact/Prometric.svg",
+    "destination": "assets/optimized/1561c2e68d.svg",
+    "before": 4135288,
+    "after": 2286689
+  },
+  {
+    "input": "assets/Contact/PB.svg",
+    "destination": "assets/optimized/d09c842876.svg",
+    "before": 3977580,
+    "after": 2291257
+  },
+  {
+    "input": "assets/Contact/WareIQ.svg",
+    "destination": "assets/optimized/de0e358c77.svg",
+    "before": 24137093,
+    "after": 13419046
+  },
+  {
+    "input": "assets/section 3/Integritty.svg",
+    "destination": "assets/optimized/97c11bc5a4.svg",
+    "before": 22300235,
+    "after": 12039820
+  },
+  {
+    "input": "assets/section 4/Updated/Thinking by Human_Image.svg",
+    "destination": "assets/optimized/6cb4f0b8b3.svg",
+    "before": 2704902,
+    "after": 1367503
+  },
+  {
+    "input": "assets/section 4/Updated/Connected by Tech_Image.svg",
+    "destination": "assets/optimized/ebae0a5a11.svg",
+    "before": 1479366,
+    "after": 720371
+  },
+  {
+    "input": "assets/section 4/Updated/Supported by AI_Image.svg",
+    "destination": "assets/optimized/7eeb65797f.svg",
+    "before": 872875,
+    "after": 480468
+  },
+  {
+    "input": "assets/section 6/Updated/Retail & Banking_Image.svg",
+    "destination": "assets/optimized/234f757eb6.svg",
+    "before": 1588291,
+    "after": 759084
+  },
+  {
+    "input": "assets/section 6/Updated/Healthcare & Wellness_Image.svg",
+    "destination": "assets/optimized/aceedc6fdc.svg",
+    "before": 1640512,
+    "after": 782889
+  },
+  {
+    "input": "assets/section 6/Updated/Education & Assessment_Image.svg",
+    "destination": "assets/optimized/5af440eafc.svg",
+    "before": 2998039,
+    "after": 1648516
+  },
+  {
+    "input": "assets/section 6/Updated/AI & SaaS_Image.svg",
+    "destination": "assets/optimized/da09760a1e.svg",
+    "before": 1202172,
+    "after": 538317
+  },
+  {
+    "input": "assets/section 6/Updated/Food & Beverage_Image.svg",
+    "destination": "assets/optimized/0169588f3f.svg",
+    "before": 2116704,
+    "after": 1019749
+  },
+  {
+    "input": "assets/section 6/Updated/Shipping & Mailing_Image.svg",
+    "destination": "assets/optimized/b5c09208ed.svg",
+    "before": 1032173,
+    "after": 532742
+  },
+  {
+    "input": "assets/section 9/Updated/Footer Image.svg",
+    "destination": "assets/optimized/dde83936d2.svg",
+    "before": 10916996,
+    "after": 6606993
+  },
+  {
+    "input": "assets/About Us/Updated/Deepak.svg",
+    "destination": "assets/optimized/2a8158f047.svg",
+    "before": 139682,
+    "after": 73527
+  },
+  {
+    "input": "assets/About Us/Updated/James.svg",
+    "destination": "assets/optimized/a13ee0a321.svg",
+    "before": 146350,
+    "after": 79719
+  },
+  {
+    "input": "assets/About Us/Updated/Chinmay.svg",
+    "destination": "assets/optimized/7c21c636d4.svg",
+    "before": 437447,
+    "after": 179712
+  },
+  {
+    "input": "assets/About Us/Updated/Mani.svg",
+    "destination": "assets/optimized/2f40a0b2f0.svg",
+    "before": 392226,
+    "after": 136359
+  },
+  {
+    "input": "assets/About Us/Updated/Nawang.svg",
+    "destination": "assets/optimized/622810fb01.svg",
+    "before": 242342,
+    "after": 108311
+  },
+  {
+    "input": "assets/About Us/Updated/Nayan.svg",
+    "destination": "assets/optimized/8ab1e6671e.svg",
+    "before": 140709,
+    "after": 76090
+  },
+  {
+    "input": "assets/About Us/Updated/Raja.svg",
+    "destination": "assets/optimized/a8b28a3700.svg",
+    "before": 135070,
+    "after": 76283
+  },
+  {
+    "input": "assets/About Us/Updated/Rajdeep.svg",
+    "destination": "assets/optimized/8ece1f8366.svg",
+    "before": 130071,
+    "after": 69280
+  },
+  {
+    "input": "assets/About Us/Updated/Rajnish.svg",
+    "destination": "assets/optimized/6e1a686250.svg",
+    "before": 125939,
+    "after": 67152
+  },
+  {
+    "input": "assets/About Us/Updated/Sachchid.svg",
+    "destination": "assets/optimized/d147bf137d.svg",
+    "before": 459595,
+    "after": 172340
+  },
+  {
+    "input": "assets/About Us/Updated/Sachin.svg",
+    "destination": "assets/optimized/99730ffc07.svg",
+    "before": 411493,
+    "after": 159006
+  },
+  {
+    "input": "assets/About Us/Updated/Priya.svg",
+    "destination": "assets/optimized/2c67090e30.svg",
+    "before": 210795,
+    "after": 116752
+  },
+  {
+    "input": "assets/About Us/Updated/Swati.svg",
+    "destination": "assets/optimized/3500701c7e.svg",
+    "before": 173564,
+    "after": 95933
+  },
+  {
+    "input": "assets/About Us/Updated/Vivek.svg",
+    "destination": "assets/optimized/0b3c3d8af8.svg",
+    "before": 202493,
+    "after": 114114
+  },
+  {
+    "input": "assets/About Us/Updated/Yashwanth.svg",
+    "destination": "assets/optimized/23c630cf0c.svg",
+    "before": 158099,
+    "after": 88596
+  },
+  {
+    "input": "assets/Impact/SyphonyAI.svg",
+    "destination": "assets/optimized/731694e6be.svg",
+    "before": 3628641,
+    "after": 2720070
+  },
+  {
+    "input": "assets/Impact/DN.svg",
+    "destination": "assets/optimized/9c6855e13f.svg",
+    "before": 2806297,
+    "after": 2074458
+  },
+  {
+    "input": "assets/Impact/pb-updated.png",
+    "destination": "assets/optimized/390c625287.webp",
+    "before": 859303,
+    "after": 566286
+  },
+  {
+    "input": "assets/Impact/prometric-updated.png",
+    "destination": "assets/optimized/85ef624994.webp",
+    "before": 983680,
+    "after": 675154
+  },
+  {
+    "input": "assets/Impact/wareiq-updated.png",
+    "destination": "assets/optimized/d0bb052f0f.webp",
+    "before": 1242434,
+    "after": 903512
+  },
+  {
+    "input": "assets/Impact/integritty-updated.png",
+    "destination": "assets/optimized/9025960c3c.webp",
+    "before": 979567,
+    "after": 680444
+  }
+]

@@ -1,0 +1,64 @@
+/* Phone-only refinements shared across the four pages. */
+@media (max-width: 760px) {
+  .hero-updated .side-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    width: auto;
+    transform: none;
+  }
+  .hero-updated .side-nav .brand { flex-basis: 100%; margin-bottom: 8px; }
+  .hero-updated .side-nav a:not(.brand) {
+    display: flex;
+    width: auto;
+    height: auto;
+    min-height: 44px;
+    gap: 6px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .hero-updated .side-nav .nav-icon { width: 18px; height: 18px; flex-shrink: 0; }
+  .hero-updated { min-height: 640px; height: 100svh; }
+  .hero-updated .hero-inner { bottom: 64px; }
+  .hero-updated h1 { font-size: clamp(36px, 10vw, 52px); overflow-wrap: break-word; }
+
+  .home-project-item > div { min-width: 0; flex: 1; }
+  .home-project-item :is(h4,p), .about-person h3 { overflow-wrap: anywhere; }
+  .home-project-summary, .home-project-details { padding: 20px; }
+  .home-project-item { gap: 12px; }
+  .home-project-image { min-height: 0; }
+  .trusted-leaders-strip { min-height: 96px; padding: 24px 16px; display: grid; place-items: center; aspect-ratio: auto; }
+  .trusted-leaders-strip h3 { position: static; width: 100%; white-space: normal; transform: none; font-size: 24px; line-height: 32px; text-align: center; }
+  .impact-card-header { flex-wrap: wrap; }
+  .impact-card-header h3 { font-size: 22px; line-height: 30px; }
+  .impact-card-header img { max-width: 100%; }
+  .impact-card-body { padding: 20px; }
+  .impact-card-story, .impact-card-result { min-width: 0; overflow-wrap: break-word; }
+
+  .home-contact-cta .contact-copy,
+  .about-contact-cta-card .contact-copy { min-width: 0; }
+  .home-contact-cta .contact-copy p,
+  .about-contact-cta-card .contact-copy p { font-size: 18px; line-height: 28px; }
+  .contact-actions { max-width: 100%; }
+  .contact-button-primary { max-width: 100%; white-space: normal; min-height: 48px; }
+  .about-person-linkedin { min-height: 44px; display: inline-flex; align-items: center; }
+
+  .footer-office p { font-size: 18px; line-height: 28px; overflow-wrap: anywhere; }
+  .footer-updated-links a { min-height: 44px; display: flex; align-items: center; overflow-wrap: anywhere; }
+  .footer-updated-links { gap: 12px; }
+  .footer-updated-strip { padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+  .bottom-nav-shell { bottom: max(16px, env(safe-area-inset-bottom)); }
+  .bottom-nav-menu { width: 220px; height: auto; gap: 4px; padding: 12px 0; }
+  .bottom-nav-menu .bottom-nav-link { flex: 0 0 44px; height: 44px; line-height: 24px; }
+}
+
+@media (max-width: 380px) {
+  .hero-updated .side-nav { column-gap: 12px; }
+  .hero-updated .side-nav a:not(.brand) { font-size: 14px; }
+  .hero-updated .side-nav .nav-icon { width: 16px; height: 16px; }
+  .home-project-item > span { width: 32px; height: 32px; flex-basis: 32px; }
+}
