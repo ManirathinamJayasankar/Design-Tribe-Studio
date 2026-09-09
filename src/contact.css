@@ -24,6 +24,8 @@
 .inquiry-nav a:focus-visible,.inquiry-submit:focus-visible { outline: 2px solid #00694e; outline-offset: 5px; }
 .inquiry-status { font-size: 16px; line-height: 24px; color: #4e4e4e; margin: 16px 0 0; }
 .inquiry-status:empty { display: none; }
+.inquiry-status.is-error { color: #b3261e; }
+.inquiry-honeypot { display: none; }
 .inquiry-sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .inquiry-footer { display: flex; justify-content: center; background: #003527; overflow: hidden; }
 .get-in-touch-page .contact-footer.footer-updated { width: min(1600px,calc(100% - 2 * var(--inquiry-gutter))); }
