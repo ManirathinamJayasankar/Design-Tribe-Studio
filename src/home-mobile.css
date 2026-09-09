@@ -1,0 +1,127 @@
+/* Figma 2706:5477 — homepage mobile layout, including footer 2734:7446. */
+.footer-logo-picture, .footer-wordmark-picture { display: contents; }
+.footer-logo-picture source, .footer-wordmark-picture source { display: none; }
+.home-mobile-menu, .home-mobile-system { display: none; }
+.mobile-line-break { display: none; }
+@media (max-width: 760px) {
+  .home-page { --home-mobile-gutter: clamp(24px, 8.208955vw, 33px); }
+  .home-page .hero-updated { height: auto; min-height: 0; aspect-ratio: 402 / 226; max-height: none; }
+  .home-page .hero-updated .side-nav { top: var(--home-mobile-gutter); left: var(--home-mobile-gutter); right: auto; display: block; }
+  .home-page .hero-updated .side-nav a:not(.brand) { display: none; }
+  .home-page .hero-updated .brand, .home-page .hero-updated .brand img { width: 110px; height: 24px; margin: 0; }
+  .home-page .hero-updated .hero-inner { top: 37.61%; bottom: auto; left: var(--home-mobile-gutter); right: var(--home-mobile-gutter); width: auto; transform: none; }
+  .home-page .hero-updated h1 { font-size: 24px; line-height: 28px; letter-spacing: -.025em; }
+  .home-mobile-menu { display: block; position: absolute; top: calc(var(--home-mobile-gutter) - 10px); right: calc(var(--home-mobile-gutter) - 10px); z-index: 10; }
+  .home-mobile-menu summary { width: 44px; height: 44px; display: grid; place-items: center; cursor: pointer; list-style: none; }
+  .home-mobile-menu summary::-webkit-details-marker { display: none; }
+  .home-mobile-menu nav { position: absolute; right: 10px; top: 44px; width: 190px; padding: 8px 0; border: 1px solid var(--stroke-color); border-radius: 8px; background: white; }
+  .home-mobile-menu nav a { display: flex; align-items: center; min-height: 44px; padding: 0 16px; color: #2e2e2e; font-size: 16px; }
+  .home-mobile-menu summary:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+
+  .home-page :is(.connected-overview-section,.section-work,.trusted-leaders-section,.industries-updated-section) { padding: 33px var(--home-mobile-gutter); height: auto; }
+  .home-page :is(.connected-overview-wrap,.section-work .work-wrap,.trusted-leaders-wrap,.industries-updated-wrap) { width: 100%; height: auto; gap: 33px; }
+  .home-page :is(.connected-overview-copy,.section-work .work-heading,.trusted-leaders-copy,.industries-updated-copy) { width: 100%; height: auto; gap: 4px; }
+  .home-page :is(.connected-overview-copy,.section-work .work-heading,.trusted-leaders-copy,.industries-updated-copy) > h2 { width: 100%; font-size: 16px; line-height: 20px; font-weight: 500; }
+  .home-page :is(.connected-overview-copy,.section-work .work-heading,.trusted-leaders-copy,.industries-updated-copy) > p { width: 100%; font-size: 12px; line-height: 16px; }
+  .home-page .section-work .work-intro { height: auto; }
+  .home-page .mobile-line-break { display: block; }
+  .home-page .connected-overview-diagram { display: block; height: auto; }
+  .home-page .connected-overview-artwork { display: none; }
+  .home-mobile-system { display: block; position: relative; width: 100%; aspect-ratio: 336 / 120; }
+  .mobile-system-pill { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 25.6%; height: 23.333%; border-radius: 40px; background: #f9f9f3; white-space: nowrap; }
+  .mobile-system-pill b { font-size: 8px; line-height: 8px; font-weight: 600; color: #2e2e2e; }
+  .mobile-system-pill span { font-size: 5px; line-height: 5px; color: #4e4e4e; }
+  .mobile-system-pill:nth-child(1) { top: 0; left: 0; }
+  .mobile-system-pill:nth-child(2) { top: 0; left: 37.2%; }
+  .mobile-system-pill:nth-child(3) { top: 0; right: 0; }
+  .mobile-system-pill:nth-child(5) { bottom: 0; left: 0; }
+  .mobile-system-pill:nth-child(6) { bottom: 0; left: 37.2%; }
+  .mobile-system-pill:nth-child(7) { bottom: 0; right: 0; }
+  .mobile-system-core { position: absolute; left: 34.226%; top: 36.667%; width: 31.548%; height: 26.667%; border-radius: 40px; display: grid; place-content: center; background: linear-gradient(168deg,#003426,#048665); color: white; text-align: center; font-size: 8px; line-height: 8px; font-weight: 600; }
+  .mobile-connector { position: absolute; width: 8.63%; height: 35.83%; }
+  .mobile-connector.c1 { left: 25.595%; top: 11.667%; }
+  .mobile-connector.c2 { left: 25.595%; top: 53.333%; transform: scaleY(-1); }
+  .mobile-connector.c3 { left: 65.774%; top: 11.667%; transform: scaleX(-1); }
+  .mobile-connector.c4 { left: 65.774%; top: 53.333%; transform: rotate(180deg); }
+  .mobile-connector.c5,.mobile-connector.c6 { width: 4.762%; height: 2px; left: 47.619%; transform: rotate(90deg); }
+  .mobile-connector.c5 { top: 29.167%; }
+  .mobile-connector.c6 { top: 70%; }
+
+  .home-page .home-projects-updated { gap: 33px; }
+  .home-page .home-project-row > * { border-radius: 8px; }
+  .home-page :is(.home-project-summary,.home-project-details) { padding: 16px; }
+  .home-page .home-project-summary { gap: 8px; }
+  .home-page .home-project-rule { height: 0; position: relative; }
+  .home-page .home-project-rule::after { content: ""; position: absolute; inset: -.5px 0 auto; height: .5px; background: var(--stroke-color); }
+  .home-page .home-project-summary h3, .home-page .home-project-item h4 { font-size: 14px; line-height: 18px; color: #2e2e2e; }
+  .home-page .home-project-summary p, .home-page .home-project-item p { font-size: 12px; line-height: 16px; }
+  .home-page .home-project-summary p br { display: none; }
+  .home-page .home-project-summary > img[alt="SymphonyAI"] { width: 121px; height: 16px; }
+  .home-page .home-project-summary > img[alt="Diebold Nixdorf"] { width: 32px; height: 24px; }
+  .home-page .home-project-summary > img[alt="Prometric"] { width: 67px; height: 24px; }
+  .home-page .home-project-summary > img[alt="Pitney Bowes"] { width: 117px; height: 24px; }
+  .home-page .home-project-summary > img[alt="WareIQ"] { width: 80.379px; height: 24px; }
+  .home-page .home-project-summary > img[alt="Integritty"] { width: 76.962px; height: 24px; }
+  .home-page .home-project-eyebrow { font-size: 10px; line-height: 14px; margin-bottom: 8px; }
+  .home-page .home-project-item { gap: 8px; padding: 8px 0; border: 0; box-shadow: inset 0 .5px var(--stroke-color); }
+  .home-page .home-project-item:nth-child(2) { box-shadow: none; }
+  .home-page .home-project-item :is(h4,p) { max-width: 248px; }
+  .home-page .home-project-item:nth-child(2) :is(h4,p) { max-width: 245px; }
+  .home-page .home-project-item:nth-child(2) { padding-top: 0; }
+  .home-page .home-project-item:last-child { padding-bottom: 0; }
+  .home-page .home-project-item > span { width: 34px; height: 34px; flex-basis: 34px; }
+  .home-page .home-project-item img { width: 13.6px; height: 13.6px; }
+  .home-page .trusted-leaders-card-row { gap: 8px; }
+  .home-page .trusted-leaders-card h3 { font-size: 20px; line-height: 25.455px; top: 9%; }
+  .home-page .trusted-leaders-strip { min-height: 80px; height: 80px; aspect-ratio: auto; padding: 20px 4px; }
+  .home-page .trusted-leaders-strip h3 { font-size: 20px; line-height: 40px; }
+  .home-page .industries-mosaic { display: flex; flex-direction: column; gap: 8px; width: 100%; height: auto; }
+  .home-page .industries-mosaic-card { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 336 / 180; border-radius: 8px; }
+  .home-page .industries-mosaic-card h3 { left: 24px; top: 24px; width: calc(100% - 48px); font-size: 16px; line-height: 16.325px; margin: 0; }
+  .home-page .industries-mosaic-card h3 br { display: none; }
+  .home-page .industries-card-art { display: none; }
+  .home-page .industry-mobile-crop { display: block; position: absolute; z-index: 1; overflow: hidden; bottom: 0; left: 50%; transform: translateX(-50%); }
+  .home-page .industry-mobile-crop img { position: absolute; max-width: none; }
+  .home-page .industries-retail .industry-mobile-crop { left: auto; right: 0; transform: none; width: 43.155%; height: 100%; }
+  .home-page .industries-retail .industry-mobile-crop img { width: 210.98%; height: 112.51%; left: -58.34%; top: 0; }
+  .home-page .industries-healthcare .industry-mobile-crop { width: 53.685%; height: 63.489%; }
+  .home-page .industries-healthcare .industry-mobile-crop img { width: 140.81%; height: 124.63%; left: -20.62%; top: -14.34%; }
+  .home-page .industries-education .industry-mobile-crop { width: 83.333%; height: 60.556%; }
+  .home-page .industries-education .industry-mobile-crop img { width: 100.03%; height: 171.2%; left: -.01%; top: 0; }
+  .home-page .industries-ai .industry-mobile-crop { width: 39.881%; height: 89.444%; }
+  .home-page .industries-ai .industry-mobile-crop img { width: 141.81%; height: 117.5%; left: -24.57%; top: 0; }
+  .home-page .industries-food .industry-mobile-crop { width: 40.179%; height: 77.778%; }
+  .home-page .industries-food .industry-mobile-crop img { width: 144.83%; height: 175.13%; left: -22.84%; top: -9.96%; }
+  .home-page .industries-shipping .industry-mobile-crop { width: 43.155%; height: 77.778%; }
+  .home-page .industries-shipping .industry-mobile-crop img { width: 199.4%; height: 115.81%; left: -55.83%; top: -15.81%; }
+  /* Keep the existing footer geometry; inset only the preceding CTA panel. */
+  .home-page .contact-section { padding-top: 33px; }
+  .home-page .contact-panel { --contact-panel-bottom-space: 33px; width: calc(100% - 2 * (var(--home-mobile-gutter) - 24px)); margin-inline: auto; }
+  .home-page .contact-panel::before { top: -33px; }
+  .home-page .home-contact-cta { width: 100%; max-width: 100%; min-height: 142px; height: auto; margin-inline: auto; padding: 16px 24px; border-radius: 8px; gap: 8px; align-items: flex-start; justify-content: center; }
+  .home-page .home-contact-cta .contact-copy { width: 100%; gap: 6.72px; }
+  .home-page .home-contact-cta .contact-copy h2 { font-size: 16px; line-height: 20px; font-weight: 600; font-variation-settings: "wght" 600; }
+  .home-page .home-contact-cta .contact-copy p { font-size: 6px; line-height: 8px; }
+  .home-page .home-contact-cta .contact-copy br { display: none; }
+  .home-page .home-contact-cta .contact-button-primary { min-height: 0; padding: 8px; gap: 4px; font-size: 8px; line-height: 8px; border-radius: 4px; }
+  .home-page .home-contact-cta .contact-button-primary img { width: 8px; height: 8px; }
+
+  .home-page .contact-footer.footer-updated { width: calc(100% + 48px); max-width: none; margin: 0; padding: 24px 24px 0; background: #003527; }
+  .home-page .footer-updated-grid { width: 100%; grid-template-columns: max-content minmax(0, 1fr); column-gap: 48px; row-gap: 24px; justify-content: start; }
+  .home-page .footer-offices { grid-column: 1 / -1; }
+  .home-page .footer-updated-logo { width: 61px; height: 60px; margin-bottom: 24px; }
+  .home-page .footer-addresses { grid-template-columns: 1fr; gap: 48px; min-height: 0; }
+  .home-page .footer-office + .footer-office::before { display: block; left: 0; top: -24px; width: 100%; height: 0; border: 0; border-top: 1px solid var(--stroke-color); }
+  .home-page .footer-updated h3 { font-size: 16px; line-height: 20px; }
+  .home-page .footer-office p, .home-page .footer-updated-links a { font-size: 14px; line-height: 16px; }
+  .home-page .footer-updated-links { gap: 16px; white-space: normal; }
+  .home-page .footer-updated-links a { min-height: 0; position: relative; }
+  /* Extend the touch target into the gap without changing Figma's text positions. */
+  .home-page .footer-updated-links a::after { content: ""; position: absolute; inset: -8px 0; }
+  .home-page .footer-updated-brand { width: 100%; margin-top: 24px; gap: 24px; }
+  .home-page .footer-updated-wordmark { width: 100%; height: auto; aspect-ratio: 354 / 65; }
+  .home-page .footer-updated-strip { width: 100%; min-height: 61px; height: auto; padding: 24px 0 max(24px, env(safe-area-inset-bottom)); flex-wrap: nowrap; gap: 12px; }
+  .home-page .footer-updated-strip::before { width: calc(100% + 48px); }
+  .home-page .footer-updated-strip p { font-size: 10px; line-height: 12px; white-space: nowrap; }
+}
+.industry-mobile-crop { display: none; }
