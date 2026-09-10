@@ -125,3 +125,21 @@
   .home-page .footer-updated-strip p { font-size: 10px; line-height: 12px; white-space: nowrap; }
 }
 .industry-mobile-crop { display: none; }
+.mobile-update-picture { display: contents; }
+.mobile-update-picture source { display: none; }
+
+/* September mobile revision: larger section copy and the supplied mobile CTA crop. */
+@media (max-width: 760px) {
+  .home-page :is(.connected-overview-copy,.section-work .work-heading,.trusted-leaders-copy,.industries-updated-copy) > h2 { font-size: 20px; line-height: 24px; }
+  .home-page :is(.connected-overview-copy,.section-work .work-heading,.trusted-leaders-copy,.industries-updated-copy) > p { font-size: 14px; line-height: 18px; }
+  .home-page .industries-mosaic-card h3 { font-size: 20px; line-height: 24px; }
+  .home-page .trusted-leaders-strip h3 { line-height: 24px; }
+  .home-page .home-contact-cta { min-height: 248px; padding: 24px; gap: 16px; }
+  .home-page .home-contact-cta::before { display: none; } /* Overlay is in the supplied export. */
+  .home-page .home-contact-cta .contact-copy { gap: 8px; }
+  .home-page .home-contact-cta .contact-copy h2 { font-size: 20px; line-height: 24px; }
+  .home-page .home-contact-cta .contact-copy h2 br:last-of-type { display: block; }
+  .home-page .home-contact-cta .contact-copy p { font-size: 14px; line-height: 18px; }
+  .home-page .home-contact-cta .contact-button-primary { font-size: 12px; line-height: 16px; }
+  .home-page .home-contact-cta .contact-button-primary img { width: 16px; height: 16px; }
+}

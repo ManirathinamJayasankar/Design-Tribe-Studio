@@ -1,0 +1,10 @@
+/* Figma 2553:3012 — September content and portrait revision. */
+.about-page .about-person-photo { background: #d9d9d9; }
+.about-page :is(.about-origin-intro h2, .about-story-label h2, .about-story-content h3, .about-clients-inner > h2) { letter-spacing: -.015em; }
+.about-page .about-clients-inner > h2 { color: #4e4e4e; }
+.about-page .about-clients-inner > h2 strong { color: #2e2e2e; }
+@media (min-width: 761px) {
+  .about-page .hero-updated .brand img { width: clamp(143.379px, 9.956875vw, 191.172px); height: clamp(36px, 2.5vw, 48px); object-fit: contain; }
+  .about-page .about-contact-cta-card .contact-copy h2 { font-weight: 600; font-variation-settings: "wght" 600; line-height: 1.166667; }
+  .about-page .about-contact-cta-card .contact-copy p { line-height: 1.416667; }
+}

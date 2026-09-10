@@ -1,0 +1,17 @@
+/* Desktop Figma 2220:5886, September revision. Mobile has independent styling. */
+@media (min-width: 761px) {
+  .home-page .hero-updated .brand img {
+    width: clamp(143.379px, 9.956875vw, 191.172px);
+    height: clamp(36px, 2.5vw, 48px);
+    object-fit: contain;
+  }
+  .home-page :is(.trusted-leaders-copy, .industries-updated-copy) > h2,
+  .home-page .home-contact-cta .contact-copy h2 {
+    font-weight: 600;
+    font-variation-settings: "wght" 600;
+    line-height: 1.166667;
+  }
+  .home-page :is(.trusted-leaders-copy, .industries-updated-copy) > p,
+  .home-page .home-contact-cta .contact-copy p { line-height: 1.416667; }
+  .home-page .trusted-leaders-copy > p { color: #676767; }
+}

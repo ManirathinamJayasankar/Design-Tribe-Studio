@@ -1,5 +1,6 @@
 /* Phone-only refinements shared across the four pages. */
 @media (max-width: 760px) {
+  .site-bottom-blur { display: none; }
   .hero-updated .side-nav {
     display: flex;
     flex-wrap: wrap;
