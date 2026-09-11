@@ -115,28 +115,28 @@
   .home-page .home-contact-cta .contact-button-primary { min-height: 0; padding: 8px; gap: 4px; font-size: 8px; line-height: 8px; border-radius: 4px; }
   .home-page .home-contact-cta .contact-button-primary img { width: 8px; height: 8px; }
 
-  :is(.home-page,.about-page) .contact-footer.footer-updated { width: calc(100% + 48px); max-width: none; margin: 0; padding: 24px 24px 0; background: #003527; }
-  :is(.home-page,.about-page) .footer-updated-grid { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 12px; justify-content: start; }
-  :is(.home-page,.about-page) .footer-offices { grid-column: 1 / -1; }
-  :is(.home-page,.about-page) .footer-updated-logo { width: 61px; height: 60px; margin-bottom: 16px; }
-  :is(.home-page,.about-page) .footer-addresses { grid-template-columns: 1fr; gap: 48px; min-height: 0; }
-  :is(.home-page,.about-page) .footer-office + .footer-office::before { display: block; left: 0; top: -24px; width: 100%; height: 0; border: 0; border-top: 1px solid var(--stroke-color); }
-  :is(.home-page,.about-page) .footer-offices { position: relative; padding-bottom: 36px; }
-  :is(.home-page,.about-page) .footer-offices::after { content: ""; position: absolute; bottom: 12px; left: -24px; width: calc(100% + 48px); border-top: 1px solid var(--stroke-color); }
-  :is(.home-page,.about-page) .footer-updated h3 { font-size: 16px; line-height: 20px; }
-  :is(.home-page,.about-page) .footer-office p, :is(.home-page,.about-page) .footer-updated-links a { font-size: 14px; line-height: 16px; }
-  :is(.home-page,.about-page) .footer-updated-links { gap: 16px; white-space: normal; }
+  :is(.home-page,.about-page,.impact-page) .contact-footer.footer-updated { width: calc(100% + 48px); max-width: none; margin: 0; padding: 24px 24px 0; background: #003527; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-grid { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 12px; justify-content: start; }
+  :is(.home-page,.about-page,.impact-page) .footer-offices { grid-column: 1 / -1; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-logo { width: 61px; height: 60px; margin-bottom: 16px; }
+  :is(.home-page,.about-page,.impact-page) .footer-addresses { grid-template-columns: 1fr; gap: 48px; min-height: 0; }
+  :is(.home-page,.about-page,.impact-page) .footer-office + .footer-office::before { display: block; left: 0; top: -24px; width: 100%; height: 0; border: 0; border-top: 1px solid var(--stroke-color); }
+  :is(.home-page,.about-page,.impact-page) .footer-offices { position: relative; padding-bottom: 36px; }
+  :is(.home-page,.about-page,.impact-page) .footer-offices::after { content: ""; position: absolute; bottom: 12px; left: -24px; width: calc(100% + 48px); border-top: 1px solid var(--stroke-color); }
+  :is(.home-page,.about-page,.impact-page) .footer-updated h3 { font-size: 16px; line-height: 20px; }
+  :is(.home-page,.about-page,.impact-page) .footer-office p, :is(.home-page,.about-page,.impact-page) .footer-updated-links a { font-size: 14px; line-height: 16px; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-links { gap: 16px; white-space: normal; }
   /* Figma: 12px gap + 48px divider container + 12px gap between link groups. */
-  :is(.home-page,.about-page) .footer-updated-links + .footer-updated-links { position: relative; margin-top: 60px; }
-  :is(.home-page,.about-page) .footer-updated-links + .footer-updated-links::before { content: ""; position: absolute; top: -36px; left: 0; width: 100%; border-top: 1px solid var(--stroke-color); }
-  :is(.home-page,.about-page) .footer-updated-links a { min-height: 0; position: relative; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-links + .footer-updated-links { position: relative; margin-top: 60px; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-links + .footer-updated-links::before { content: ""; position: absolute; top: -36px; left: 0; width: 100%; border-top: 1px solid var(--stroke-color); }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-links a { min-height: 0; position: relative; }
   /* Extend the touch target into the gap without changing Figma's text positions. */
-  :is(.home-page,.about-page) .footer-updated-links a::after { content: ""; position: absolute; inset: -8px 0; }
-  :is(.home-page,.about-page) .footer-updated-brand { width: 100%; margin-top: 36px; gap: 24px; }
-  :is(.home-page,.about-page) .footer-updated-wordmark { width: 100%; height: auto; aspect-ratio: 354 / 65; }
-  :is(.home-page,.about-page) .footer-updated-strip { width: 100%; min-height: 37px; height: auto; padding: 13px 0 max(12px, env(safe-area-inset-bottom)); flex-wrap: nowrap; gap: 12px; }
-  :is(.home-page,.about-page) .footer-updated-strip::before { width: calc(100% + 48px); }
-  :is(.home-page,.about-page) .footer-updated-strip p { font-size: 10px; line-height: 12px; white-space: nowrap; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-links a::after { content: ""; position: absolute; inset: -8px 0; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-brand { width: 100%; margin-top: 36px; gap: 24px; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-wordmark { width: 100%; height: auto; aspect-ratio: 354 / 65; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-strip { width: 100%; min-height: 37px; height: auto; padding: 13px 0 max(12px, env(safe-area-inset-bottom)); flex-wrap: nowrap; gap: 12px; }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-strip::before { width: calc(100% + 48px); }
+  :is(.home-page,.about-page,.impact-page) .footer-updated-strip p { font-size: 10px; line-height: 12px; white-space: nowrap; }
 }
 .industry-mobile-crop { display: none; }
 .mobile-update-picture { display: contents; }

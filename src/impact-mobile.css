@@ -1,0 +1,51 @@
+/* Figma 2760:9400 — 402px mobile Impacts; desktop remains unchanged. */
+@media (max-width: 760px) {
+  .impact-page { --home-mobile-gutter: clamp(24px, 8.208955vw, 33px); --about-space: 33px; }
+  .impact-page::before { display: none; }
+  .impact-page .hero-updated { height: auto; min-height: 0; max-height: none; aspect-ratio: 402 / 226; }
+  .impact-page .hero-updated .side-nav { top: var(--home-mobile-gutter); left: var(--home-mobile-gutter); right: auto; display: block; }
+  .impact-page .hero-updated .side-nav a:not(.brand) { display: none; }
+  .impact-page .hero-updated .brand, .impact-page .hero-updated .brand img { width: 110px; height: 24px; margin: 0; }
+  .impact-page .hero-updated .hero-inner { top: 37.61%; bottom: auto; left: var(--home-mobile-gutter); right: var(--home-mobile-gutter); width: auto; transform: none; }
+  .impact-page .hero-updated h1 { font-size: 24px; line-height: 28px; letter-spacing: -.025em; }
+  .impact-page :is(.about-people-section,.about-studio-section,.about-story-section,.about-clients-section) { padding: 33px var(--home-mobile-gutter); }
+  .impact-page .about-contact-section { padding: 33px 24px 0; }
+  .impact-page .about-contact-section .contact-wrap { width: 100%; }
+  .impact-page .about-contact-panel { --contact-panel-bottom-space: 33px; width: calc(100% - 2 * (var(--home-mobile-gutter) - 24px)); margin-inline: auto; }
+  .impact-page .about-contact-panel::before { top: -33px; }
+  .impact-page .about-contact-cta-card { width: 100%; max-width: none; min-height: 248px; height: auto; aspect-ratio: auto; padding: 24px; border-radius: 8px; gap: 16px; justify-content: center; align-items: flex-start; }
+  .impact-page .about-contact-cta-card::before { display: none; }
+  .impact-page .about-contact-cta-card { isolation: isolate; clip-path: inset(0 round 8px); background: transparent; border: 0; outline: none; box-shadow: none; }
+  .impact-page .about-contact-cta-card .contact-cta-background { inset: -1px; width: calc(100% + 2px); height: calc(100% + 2px); max-width: none; border-radius: 0; }
+  .impact-page .about-contact-cta-card :is(.contact-copy,.contact-actions).about-scroll-reveal { opacity: 1; filter: none; transform: none; }
+  .impact-page .about-contact-cta-card .contact-copy { width: 100%; flex: none; gap: 8px; }
+  .impact-page .about-contact-cta-card .contact-copy h2 { font-size: 20px; line-height: 24px; font-weight: 600; font-variation-settings: "wght" 600; }
+  .impact-page .about-contact-cta-card .contact-copy h2 br { display: block; }
+  .impact-page .about-contact-cta-card .contact-copy p { font-size: 14px; line-height: 18px; }
+  .impact-page .about-contact-cta-card .contact-copy p br { display: none; }
+  .impact-page .about-contact-cta-card .contact-actions { align-self: flex-start; margin: 0; }
+  .impact-page .about-get-in-touch .contact-button-primary { min-height: 0; padding: 8px; gap: 4px; font-size: 12px; line-height: 16px; border-radius: 4px; }
+  .impact-page .about-get-in-touch .contact-button-primary img { width: 16px; height: 16px; }
+  .impact-page { background: #f6f6f6; }
+  .impact-page .impact-section { padding: 33px var(--home-mobile-gutter); background: #f6f6f6; }
+  .impact-page .impact-wrap { width: 100%; max-width: none; }
+  .impact-page .impact-wrap > h2 { padding: 0; margin: 0 0 33px; font-size: 20px; line-height: 24px; letter-spacing: -.5px; }
+  .impact-page .impact-grid { grid-template-columns: minmax(0, 1fr); gap: 33px; }
+  .impact-page .impact-card { border-radius: 12px; }
+  .impact-page .impact-card-media { aspect-ratio: 792 / 388; }
+  .impact-page .impact-card-body { padding: 24px 16px; min-height: 0; gap: 12px; }
+  .impact-page .impact-card-header { flex-wrap: nowrap; gap: 12px; }
+  .impact-page .impact-card-header h3 { min-width: 0; font-size: 16px; line-height: 20px; letter-spacing: -.24px; }
+  .impact-page .impact-card-header img { max-width: none; flex: none; }
+  .impact-page .impact-card:nth-child(1) .impact-card-header img { width: 91px; height: 12px; }
+  .impact-page .impact-card:nth-child(2) .impact-card-header img { width: 18px; height: 16px; }
+  .impact-page .impact-card:nth-child(3) .impact-card-header img { width: 59px; height: 12px; }
+  .impact-page .impact-card:nth-child(4) .impact-card-header img { width: 45px; height: 16px; }
+  .impact-page .impact-card:nth-child(5) .impact-card-header img { width: 53px; height: 16px; }
+  .impact-page .impact-card:nth-child(6) .impact-card-header img { width: 51px; height: 16px; }
+  .impact-page .impact-card h4 { font-size: 14px; line-height: 18px; letter-spacing: -.21px; }
+  .impact-page .impact-card p { font-size: 12px; line-height: 16px; letter-spacing: -.18px; }
+  .impact-page .impact-card-story, .impact-page .impact-card-result { gap: 4px; }
+  .impact-page .impact-card-story p + p { margin-top: 12px; }
+  .impact-page .impact-card-result { margin-top: -4px; }
+}
