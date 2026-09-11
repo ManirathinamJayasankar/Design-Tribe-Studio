@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="/src/typography.css?v=1" />
   <link rel="stylesheet" href="/src/mobile.css?v=1" />
     <link rel="stylesheet" href="/src/about-revision.css?v=1" />
+    <link rel="stylesheet" href="/src/home-mobile.css?v=2" />
+    <link rel="stylesheet" href="/src/about-mobile.css?v=1" />
   </head>
   <body class="about-page">
     <div class="page-curtain" data-page-curtain role="status" aria-label="Loading" aria-live="polite">
@@ -35,7 +37,7 @@
       <section class="hero hero-static hero-updated section-dark" id="top" aria-labelledby="about-hero-title">
           <nav class="side-nav" aria-label="Primary navigation">
             <a class="brand" href="/" aria-label="Design Tribe home">
-              <img src="/assets/optimized/home-hero-logo-desktop.svg" alt="Design Tribe" />
+              <picture><source media="(max-width: 760px)" srcset="/assets/mobile-home/logo.svg" /><img src="/assets/optimized/home-hero-logo-desktop.svg" alt="Design Tribe" /></picture>
             </a>
             <a href="/impact.html">
               <img class="nav-icon" src="/assets/hero/Plus%20Sign.svg" alt="" />
@@ -51,6 +53,10 @@
             </a>
           </nav>
 
+          <details class="home-mobile-menu">
+            <summary aria-label="Open navigation"><img src="/assets/mobile-home/menu.svg" alt="" width="24" height="24" /></summary>
+            <nav aria-label="Mobile navigation"><a href="/">Home</a><a href="/impact.html">Impacts</a><a href="/about.html" aria-current="page">About us</a><a href="/contact.html">Get in touch</a></nav>
+          </details>
           <div class="hero-media" aria-hidden="true">
             <img class="hero-background-image" src="/assets/About%20Us/Updated/Healthcare%201.jpg" alt="" decoding="async" fetchpriority="high" />
             <div class="hero-dark-overlay"></div>
@@ -162,7 +168,7 @@
           <article class="about-story-row">
             <div class="about-story-label"><h2>The conviction</h2></div>
             <div class="about-story-content">
-              <h3><span>Design is not decoration. </span>It's one of the<br />highest - leverage investments a business can make.</h3>
+              <h3><span>Design is not decoration. </span>It's one of the <br />highest - leverage investments a business can make.</h3>
               <div class="about-story-body"><p>An interface doesn't just look thoughtful - it changes what a customer does next. We hold every design decision to the same scrutiny a CFO applies to any other line item, because that's the standard our clients hold everything else to.</p></div>
             </div>
           </article>
@@ -193,30 +199,30 @@
         <div class="about-clients-inner">
           <h2 id="about-clients-title"><strong>Real clients.</strong><br />Real stakes.</h2>
           <div class="about-clients-grid">
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/SyphonyAI.svg" alt="SymphonyAI" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/PB.svg" alt="Pitney Bowes" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Prometric.svg" alt="Prometric" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/DN.svg" alt="Diebold Nixdorf" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Integritty.svg" alt="Integritty" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/WareIQ.svg" alt="WareIQ" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Absoulte.svg" alt="Absolute" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/GIZ.svg" alt="GIZ" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Lybrate.svg" alt="Lybrate" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/KMG.svg" alt="Key Management Group" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Safebay.svg" alt="Safebay" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Enphase.svg" alt="Enphase" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Vitran.svg" alt="Vitran AI" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Asian%20Corporation.svg" alt="Asian Corporation" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Green%20Story.svg" alt="GreenStory" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Gutenberg.svg" alt="Gutenberg" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Future%20Food%20Cast.svg" alt="Future Food Cast" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/GateFM.svg" alt="GateFM" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/NFT.svg" alt="Kreator" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Cofrsh.svg" alt="Cofrsh" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Biodiversity.svg" alt="Biodiversity" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Curd.svg" alt="Curd" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Kreatorverse.svg" alt="Kreatorverse" /></div>
-            <div class="about-client-card"><img src="/assets/About%20Us/Client%20Logos/Fulton.svg" alt="Fulton County" /></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame386.svg" /><img src="/assets/About%20Us/Client%20Logos/SyphonyAI.svg" alt="SymphonyAI" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame387.svg" /><img src="/assets/About%20Us/Client%20Logos/PB.svg" alt="Pitney Bowes" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame388.svg" /><img src="/assets/About%20Us/Client%20Logos/Prometric.svg" alt="Prometric" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame391.svg" /><img src="/assets/About%20Us/Client%20Logos/DN.svg" alt="Diebold Nixdorf" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame390.svg" /><img src="/assets/About%20Us/Client%20Logos/Integritty.svg" alt="Integritty" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame389.svg" /><img src="/assets/About%20Us/Client%20Logos/WareIQ.svg" alt="WareIQ" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame392.svg" /><img src="/assets/About%20Us/Client%20Logos/Absoulte.svg" alt="Absolute" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame393.svg" /><img src="/assets/About%20Us/Client%20Logos/GIZ.svg" alt="GIZ" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame394.svg" /><img src="/assets/About%20Us/Client%20Logos/Lybrate.svg" alt="Lybrate" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame397.svg" /><img src="/assets/About%20Us/Client%20Logos/KMG.svg" alt="Key Management Group" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame396.svg" /><img src="/assets/About%20Us/Client%20Logos/Safebay.svg" alt="Safebay" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame395.svg" /><img src="/assets/About%20Us/Client%20Logos/Enphase.svg" alt="Enphase" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame398.svg" /><img src="/assets/About%20Us/Client%20Logos/Vitran.svg" alt="Vitran AI" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame399.svg" /><img src="/assets/About%20Us/Client%20Logos/Asian%20Corporation.svg" alt="Asian Corporation" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame400.svg" /><img src="/assets/About%20Us/Client%20Logos/Green%20Story.svg" alt="GreenStory" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame403.svg" /><img src="/assets/About%20Us/Client%20Logos/Gutenberg.svg" alt="Gutenberg" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame402.svg" /><img src="/assets/About%20Us/Client%20Logos/Future%20Food%20Cast.svg" alt="Future Food Cast" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame401.svg" /><img src="/assets/About%20Us/Client%20Logos/GateFM.svg" alt="GateFM" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame404.svg" /><img src="/assets/About%20Us/Client%20Logos/NFT.svg" alt="Kreator" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame405.svg" /><img src="/assets/About%20Us/Client%20Logos/Cofrsh.svg" alt="Cofrsh" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame406.svg" /><img src="/assets/About%20Us/Client%20Logos/Biodiversity.svg" alt="Biodiversity" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame409.svg" /><img src="/assets/About%20Us/Client%20Logos/Curd.svg" alt="Curd" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame408.svg" /><img src="/assets/About%20Us/Client%20Logos/Kreatorverse.svg" alt="Kreatorverse" /></picture></div>
+            <div class="about-client-card"><picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-about/imgFrame407.svg" /><img src="/assets/About%20Us/Client%20Logos/Fulton.svg" alt="Fulton County" /></picture></div>
           </div>
         </div>
       </section>
@@ -225,10 +231,10 @@
         <div class="contact-wrap">
           <div class="contact-panel about-contact-panel">
             <div class="contact-cta-card about-contact-cta-card about-get-in-touch">
-              <img class="contact-cta-background" src="/assets/optimized/contact-cta-800.webp" srcset="/assets/optimized/contact-cta-800.webp 800w, /assets/optimized/contact-cta-1600.webp 1600w, /assets/optimized/contact-cta-2400.webp 2400w" sizes="(max-width: 760px) calc(100vw - 48px), (max-width: 1199px) 100vw, 84vw" width="1600" height="594" alt="" loading="lazy" decoding="async" />
+              <picture class="mobile-update-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-home/cta-updated-672.webp 672w, /assets/mobile-home/cta-updated-1008.webp 1008w" sizes="calc(100vw - 66px)" /><img class="contact-cta-background" src="/assets/optimized/contact-cta-800.webp" srcset="/assets/optimized/contact-cta-800.webp 800w, /assets/optimized/contact-cta-1600.webp 1600w, /assets/optimized/contact-cta-2400.webp 2400w" sizes="(max-width: 760px) calc(100vw - 48px), (max-width: 1199px) 100vw, 84vw" width="1600" height="594" alt="" loading="lazy" decoding="async" /></picture>
               <div class="contact-copy">
                 <h2>Bring us the problem<br />you haven't solved yet.</h2>
-                <p>If it's ambitious, overdue, or stuck in committee -<br />that's usually where we do our best work.</p>
+                <p>If it's ambitious, overdue, or stuck in committee - <br />that's usually where we do our best work.</p>
               </div>
 
               <div class="contact-actions">
@@ -243,7 +249,7 @@
           <footer class="contact-footer footer-updated" aria-label="Design Tribe footer">
             <div class="footer-updated-grid">
               <div class="footer-offices">
-                <img class="footer-updated-logo" src="/assets/Footer/Updated/Logo.svg" alt="Design Tribe" width="289" height="108" />
+                <picture class="footer-logo-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-home/footer-logo.svg" /><img class="footer-updated-logo" src="/assets/Footer/Updated/Logo.svg" alt="Design Tribe" width="289" height="108" /></picture>
                 <div class="footer-addresses">
                   <div class="footer-office">
                     <h3>India Office</h3>
@@ -271,7 +277,7 @@
               </nav>
             </div>
             <div class="footer-updated-brand">
-              <img class="footer-updated-wordmark" src="/assets/Footer/Updated/Wordmark.svg" alt="Design Tribe" width="1135" height="208" />
+              <picture class="footer-wordmark-picture"><source media="(max-width: 760px)" srcset="/assets/mobile-home/footer-wordmark.svg" /><img class="footer-updated-wordmark" src="/assets/Footer/Updated/Wordmark.svg" alt="Design Tribe" width="1135" height="208" /></picture>
               <div class="footer-updated-strip">
                 <p>Build for modern business</p>
                 <p>@Design Tribe 2026</p>

@@ -2,8 +2,11 @@ const initAboutPageEffects = () => {
   const page = document.body;
   const hero = document.querySelector(".about-hero, .hero");
   const teamImage = document.querySelector(".about-team-image");
+  const mobileLayout = window.matchMedia("(max-width: 760px)").matches;
   const newRevealItems = [...document.querySelectorAll(
-    ".about-people-inner > h2, .about-person, .about-contact-cta-card .contact-copy, .about-contact-cta-card .contact-actions"
+    mobileLayout
+      ? ".about-people-inner > h2, .about-person, .about-contact-cta-card"
+      : ".about-people-inner > h2, .about-person, .about-contact-cta-card .contact-copy, .about-contact-cta-card .contact-actions"
   )];
   const revealItems = [
     ...document.querySelectorAll(".about-stat"),

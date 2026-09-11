@@ -4,6 +4,7 @@
 .home-mobile-menu, .home-mobile-system { display: none; }
 .mobile-line-break { display: none; }
 @media (max-width: 760px) {
+  .home-page::before { display: none; } /* Figma mobile uses flat fills, without the desktop grain. */
   .home-page { --home-mobile-gutter: clamp(24px, 8.208955vw, 33px); }
   .home-page .hero-updated { height: auto; min-height: 0; aspect-ratio: 402 / 226; max-height: none; }
   .home-page .hero-updated .side-nav { top: var(--home-mobile-gutter); left: var(--home-mobile-gutter); right: auto; display: block; }
@@ -49,8 +50,13 @@
 
   .home-page .home-projects-updated { gap: 33px; }
   .home-page .home-project-row > * { border-radius: 8px; }
-  .home-page :is(.home-project-summary,.home-project-details) { padding: 16px; }
+  .home-page .is-pb .home-project-image-export::after { display: block; }
+  .home-page :is(.home-project-summary,.home-project-details) { padding: 24px 16px; }
+  .home-page .is-integritty .home-project-details { padding: 16px; }
   .home-page .home-project-summary { gap: 8px; }
+  .home-page .home-project-summary > img { margin-bottom: 8px; }
+  .home-page .home-project-summary > p { margin-top: 8px; }
+  .home-page .is-sai .home-project-summary > p { margin-top: 0; }
   .home-page .home-project-rule { height: 0; position: relative; }
   .home-page .home-project-rule::after { content: ""; position: absolute; inset: -.5px 0 auto; height: .5px; background: var(--stroke-color); }
   .home-page .home-project-summary h3, .home-page .home-project-item h4 { font-size: 14px; line-height: 18px; color: #2e2e2e; }
@@ -62,8 +68,8 @@
   .home-page .home-project-summary > img[alt="Pitney Bowes"] { width: 117px; height: 24px; }
   .home-page .home-project-summary > img[alt="WareIQ"] { width: 80.379px; height: 24px; }
   .home-page .home-project-summary > img[alt="Integritty"] { width: 76.962px; height: 24px; }
-  .home-page .home-project-eyebrow { font-size: 10px; line-height: 14px; margin-bottom: 8px; }
-  .home-page .home-project-item { gap: 8px; padding: 8px 0; border: 0; box-shadow: inset 0 .5px var(--stroke-color); }
+  .home-page .home-project-eyebrow { font-size: 10px; line-height: 14px; margin-bottom: 16px; }
+  .home-page .home-project-item { gap: 8px; padding: 16px 0; border: 0; box-shadow: inset 0 .5px var(--stroke-color); }
   .home-page .home-project-item:nth-child(2) { box-shadow: none; }
   .home-page .home-project-item :is(h4,p) { max-width: 248px; }
   .home-page .home-project-item:nth-child(2) :is(h4,p) { max-width: 245px; }
@@ -72,8 +78,11 @@
   .home-page .home-project-item > span { width: 34px; height: 34px; flex-basis: 34px; }
   .home-page .home-project-item img { width: 13.6px; height: 13.6px; }
   .home-page .trusted-leaders-card-row { gap: 8px; }
-  .home-page .trusted-leaders-card h3 { font-size: 20px; line-height: 25.455px; top: 9%; }
-  .home-page .trusted-leaders-strip { min-height: 80px; height: 80px; aspect-ratio: auto; padding: 20px 4px; }
+  .home-page .trusted-leaders-copy p br { display: none; }
+  .home-page .trusted-leaders-card h3 { font-size: 20px; line-height: 24px; top: 9.3%; }
+  .home-page .trusted-leaders-card:nth-child(2) h3 { top: 9.82%; }
+  .home-page .trusted-leaders-strip { display: flex; align-items: center; justify-content: center; min-height: 80px; height: 80px; aspect-ratio: auto; padding: 16px 4px; background: #f9f9f3; border-radius: 8px; }
+  .home-page .trusted-leaders-strip > img { display: none; }
   .home-page .trusted-leaders-strip h3 { font-size: 20px; line-height: 40px; }
   .home-page .industries-mosaic { display: flex; flex-direction: column; gap: 8px; width: 100%; height: auto; }
   .home-page .industries-mosaic-card { position: relative; inset: auto; width: 100%; height: auto; aspect-ratio: 336 / 180; border-radius: 8px; }
@@ -106,23 +115,28 @@
   .home-page .home-contact-cta .contact-button-primary { min-height: 0; padding: 8px; gap: 4px; font-size: 8px; line-height: 8px; border-radius: 4px; }
   .home-page .home-contact-cta .contact-button-primary img { width: 8px; height: 8px; }
 
-  .home-page .contact-footer.footer-updated { width: calc(100% + 48px); max-width: none; margin: 0; padding: 24px 24px 0; background: #003527; }
-  .home-page .footer-updated-grid { width: 100%; grid-template-columns: max-content minmax(0, 1fr); column-gap: 48px; row-gap: 24px; justify-content: start; }
-  .home-page .footer-offices { grid-column: 1 / -1; }
-  .home-page .footer-updated-logo { width: 61px; height: 60px; margin-bottom: 24px; }
-  .home-page .footer-addresses { grid-template-columns: 1fr; gap: 48px; min-height: 0; }
-  .home-page .footer-office + .footer-office::before { display: block; left: 0; top: -24px; width: 100%; height: 0; border: 0; border-top: 1px solid var(--stroke-color); }
-  .home-page .footer-updated h3 { font-size: 16px; line-height: 20px; }
-  .home-page .footer-office p, .home-page .footer-updated-links a { font-size: 14px; line-height: 16px; }
-  .home-page .footer-updated-links { gap: 16px; white-space: normal; }
-  .home-page .footer-updated-links a { min-height: 0; position: relative; }
+  :is(.home-page,.about-page) .contact-footer.footer-updated { width: calc(100% + 48px); max-width: none; margin: 0; padding: 24px 24px 0; background: #003527; }
+  :is(.home-page,.about-page) .footer-updated-grid { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 12px; justify-content: start; }
+  :is(.home-page,.about-page) .footer-offices { grid-column: 1 / -1; }
+  :is(.home-page,.about-page) .footer-updated-logo { width: 61px; height: 60px; margin-bottom: 16px; }
+  :is(.home-page,.about-page) .footer-addresses { grid-template-columns: 1fr; gap: 48px; min-height: 0; }
+  :is(.home-page,.about-page) .footer-office + .footer-office::before { display: block; left: 0; top: -24px; width: 100%; height: 0; border: 0; border-top: 1px solid var(--stroke-color); }
+  :is(.home-page,.about-page) .footer-offices { position: relative; padding-bottom: 36px; }
+  :is(.home-page,.about-page) .footer-offices::after { content: ""; position: absolute; bottom: 12px; left: -24px; width: calc(100% + 48px); border-top: 1px solid var(--stroke-color); }
+  :is(.home-page,.about-page) .footer-updated h3 { font-size: 16px; line-height: 20px; }
+  :is(.home-page,.about-page) .footer-office p, :is(.home-page,.about-page) .footer-updated-links a { font-size: 14px; line-height: 16px; }
+  :is(.home-page,.about-page) .footer-updated-links { gap: 16px; white-space: normal; }
+  /* Figma: 12px gap + 48px divider container + 12px gap between link groups. */
+  :is(.home-page,.about-page) .footer-updated-links + .footer-updated-links { position: relative; margin-top: 60px; }
+  :is(.home-page,.about-page) .footer-updated-links + .footer-updated-links::before { content: ""; position: absolute; top: -36px; left: 0; width: 100%; border-top: 1px solid var(--stroke-color); }
+  :is(.home-page,.about-page) .footer-updated-links a { min-height: 0; position: relative; }
   /* Extend the touch target into the gap without changing Figma's text positions. */
-  .home-page .footer-updated-links a::after { content: ""; position: absolute; inset: -8px 0; }
-  .home-page .footer-updated-brand { width: 100%; margin-top: 24px; gap: 24px; }
-  .home-page .footer-updated-wordmark { width: 100%; height: auto; aspect-ratio: 354 / 65; }
-  .home-page .footer-updated-strip { width: 100%; min-height: 61px; height: auto; padding: 24px 0 max(24px, env(safe-area-inset-bottom)); flex-wrap: nowrap; gap: 12px; }
-  .home-page .footer-updated-strip::before { width: calc(100% + 48px); }
-  .home-page .footer-updated-strip p { font-size: 10px; line-height: 12px; white-space: nowrap; }
+  :is(.home-page,.about-page) .footer-updated-links a::after { content: ""; position: absolute; inset: -8px 0; }
+  :is(.home-page,.about-page) .footer-updated-brand { width: 100%; margin-top: 36px; gap: 24px; }
+  :is(.home-page,.about-page) .footer-updated-wordmark { width: 100%; height: auto; aspect-ratio: 354 / 65; }
+  :is(.home-page,.about-page) .footer-updated-strip { width: 100%; min-height: 37px; height: auto; padding: 13px 0 max(12px, env(safe-area-inset-bottom)); flex-wrap: nowrap; gap: 12px; }
+  :is(.home-page,.about-page) .footer-updated-strip::before { width: calc(100% + 48px); }
+  :is(.home-page,.about-page) .footer-updated-strip p { font-size: 10px; line-height: 12px; white-space: nowrap; }
 }
 .industry-mobile-crop { display: none; }
 .mobile-update-picture { display: contents; }
