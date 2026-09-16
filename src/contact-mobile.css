@@ -1,0 +1,24 @@
+/* Figma 2796:522 — 402px Get in touch mobile layout. */
+@media (max-width: 760px) {
+  .get-in-touch-page { --home-mobile-gutter: clamp(24px, 8.208955vw, 33px); background: #f6f6f6; }
+  .get-in-touch-page::before { display: none; }
+  .inquiry-section { padding: 0; }
+  .inquiry-layout { position: relative; display: flex; flex-direction: column; gap: 0; }
+  .inquiry-nav { width: 100%; height: 90px; padding: 33px var(--home-mobile-gutter); }
+  .inquiry-nav a:not(.inquiry-brand) { display: none; }
+  .inquiry-nav .inquiry-brand { width: 110px; height: 24px; }
+  .inquiry-brand picture { display: contents; }
+  .inquiry-nav .inquiry-brand img { width: 110px; height: 24px; }
+  .get-in-touch-page .home-mobile-menu { top: 23px; }
+  .get-in-touch-page .home-mobile-menu summary:focus-visible { outline-color: #00694e; }
+  .inquiry-content { width: 100%; padding: 33px var(--home-mobile-gutter); gap: 24px; }
+  .inquiry-heading h1 { margin: 0; font-size: 24px; line-height: 28px; letter-spacing: -.6px; }
+  .inquiry-heading p { font-size: 14px; line-height: 18px; letter-spacing: -.35px; }
+  .inquiry-form { gap: 24px; }
+  .inquiry-field input, .inquiry-field textarea { font-size: 14px; line-height: 40px; letter-spacing: -.35px; padding: 0 0 7px; }
+  .inquiry-field textarea { height: 119px; min-height: 119px; }
+  .inquiry-form > div:last-child { margin-top: 8px; }
+  .inquiry-submit { min-height: 0; padding: 12px 32px; font-size: 14px; line-height: 18px; letter-spacing: -.21px; }
+  .inquiry-submit img { width: 16px; height: 16px; }
+  .get-in-touch-page .contact-footer.footer-updated { width: 100%; }
+}
