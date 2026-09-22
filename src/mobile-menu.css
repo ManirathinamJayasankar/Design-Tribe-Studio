@@ -1,0 +1,23 @@
+/* Figma 2838:3 — full-height mobile sheet, entering from the bottom. */
+.mobile-menu-trigger { display: none; border: 0; padding: 0; background: transparent; cursor: pointer; }
+.mobile-menu-sheet { position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; border: 0; background: #f6f6f6; color: #2e2e2e; overflow-y: auto; overscroll-behavior: contain; }
+.mobile-menu-sheet[open] { display: flex; flex-direction: column; animation: mobile-menu-enter 300ms cubic-bezier(.22,1,.36,1) both; }
+.mobile-menu-sheet.is-closing { animation: mobile-menu-leave 280ms ease-in both; }
+.mobile-menu-sheet::backdrop { background: rgb(0 0 0 / .25); }
+.mobile-menu-open { overflow: hidden; }
+.mobile-menu-header { display: flex; align-items: center; justify-content: space-between; flex: none; height: 90px; padding: 23px clamp(24px, 8.208955vw, 33px); }
+.mobile-menu-header > a, .mobile-menu-header > a img { display: block; width: 110px; height: 24px; }
+.mobile-menu-close { display: grid; place-items: center; width: 44px; height: 44px; margin-right: -10px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+.mobile-menu-close img, .mobile-menu-trigger img { display: block; width: 24px; height: 24px; }
+.mobile-sheet-links { display: flex; flex: none; flex-direction: column; align-items: stretch; gap: 16px; padding: 25px clamp(24px, 8.208955vw, 33px); }
+.mobile-sheet-links a { display: flex; align-items: center; min-height: 44px; color: #2e2e2e; text-decoration: none; font-family: 'InterVariable', Arial, sans-serif; font-size: 24px; line-height: 28px; font-weight: 400; font-variation-settings: 'wght' 400; letter-spacing: -.6px; }
+.mobile-menu-sheet :is(a,button):focus-visible, .mobile-menu-trigger:focus-visible { outline: 2px solid #00694e; outline-offset: 2px; }
+.mobile-menu-footer { flex: none; margin-top: auto; background: #003527; color: white; }
+.mobile-menu-wordmark { padding: 24px; }
+.mobile-menu-wordmark img { display: block; width: 100%; height: auto; aspect-ratio: 354 / 65; }
+.mobile-menu-strip { display: flex; justify-content: space-between; gap: 12px; padding: 12px 24px max(12px, env(safe-area-inset-bottom)); border-top: 1px solid white; }
+.mobile-menu-strip p { margin: 0; font-size: 10px; line-height: 12px; letter-spacing: -.15px; font-weight: 400; font-variation-settings: 'wght' 400; }
+@media (max-width: 760px) { .home-mobile-menu.mobile-menu-trigger { display: grid; place-items: center; width: 44px; height: 44px; } }
+@keyframes mobile-menu-enter { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes mobile-menu-leave { to { transform: translateY(100%); } }
+@media (prefers-reduced-motion: reduce) { .mobile-menu-sheet[open], .mobile-menu-sheet.is-closing { animation: none; } }
